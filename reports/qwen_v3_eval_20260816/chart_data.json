@@ -1,0 +1,365 @@
+{
+  "format": "lottie_v3_eval_chart_data_v1",
+  "task_count_per_model": 90,
+  "rollouts_per_task": 3,
+  "valid_samples_per_model": 270,
+  "total_valid_samples": 1350,
+  "harness": {
+    "version": "lottie_code_agent_harness_v3",
+    "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+    "edit_checkpoint_step": 10,
+    "readonly_reminder_interval": 3
+  },
+  "models": [
+    {
+      "format": "lottie_v3_full_eval90_pass3_summary_v1",
+      "model_key": "qwen35_4b",
+      "served_model": "qwen3.5-4b-v3",
+      "task_count": 90,
+      "valid_samples": 270,
+      "aggregate": {
+        "pass@1": 0.6666666666666666,
+        "pass@2": 0.7703703703703704,
+        "pass@3": 0.8
+      },
+      "by_dataset": {
+        "humanevalplus": {
+          "pass@1": 0.788888888888889,
+          "pass@2": 0.9,
+          "pass@3": 0.9333333333333333
+        },
+        "mbppplus": {
+          "pass@1": 0.8,
+          "pass@2": 0.9111111111111111,
+          "pass@3": 0.9333333333333333
+        },
+        "swesmith_py": {
+          "pass@1": 0.41111111111111115,
+          "pass@2": 0.5,
+          "pass@3": 0.5333333333333333
+        }
+      },
+      "resolved_rollouts": 180,
+      "agent_status": {
+        "resolved": 81,
+        "max_steps": 162,
+        "parse_error": 20,
+        "no_edit": 4,
+        "edited": 3
+      },
+      "verifier_status": {
+        "resolved": 180,
+        "unresolved_no_edit": 20,
+        "unresolved_tests_failed": 17,
+        "unresolved": 35,
+        "model_failure_max_steps": 11,
+        "model_failure_parse_error": 4,
+        "model_failure_no_edit": 3
+      },
+      "harness": {
+        "version": "lottie_code_agent_harness_v3",
+        "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+        "edit_checkpoint_step": 10,
+        "readonly_reminder_interval": 3
+      },
+      "sources": {
+        "function": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/qwen35_4b/function60_vllm/sample_results.jsonl",
+          "bytes": 294628,
+          "sha256": "ecd6baf93b75c7b8b651b8890a7fe7a630abed096e774c4eb49e9c671b5d7ede"
+        },
+        "swesmith_py": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/qwen35_4b/swesmith30_vllm/sample_results.jsonl",
+          "bytes": 164197,
+          "sha256": "4d43b7351854412106757d600125afe9f29a8c59a428e77613aedc7bf8454ca5"
+        }
+      },
+      "data_role": "evaluation_only",
+      "exclude_from_training": true,
+      "key": "qwen35_4b",
+      "label": "Qwen3.5 4B",
+      "color": "#147D92"
+    },
+    {
+      "format": "lottie_v3_full_eval90_pass3_summary_v1",
+      "model_key": "qwen3_4b_baseline",
+      "served_model": "qwen3-4b-baseline-v3",
+      "task_count": 90,
+      "valid_samples": 270,
+      "aggregate": {
+        "pass@1": 0.5259259259259259,
+        "pass@2": 0.625925925925926,
+        "pass@3": 0.6666666666666666
+      },
+      "by_dataset": {
+        "humanevalplus": {
+          "pass@1": 0.7111111111111111,
+          "pass@2": 0.8111111111111111,
+          "pass@3": 0.8333333333333334
+        },
+        "mbppplus": {
+          "pass@1": 0.6777777777777778,
+          "pass@2": 0.8,
+          "pass@3": 0.8666666666666667
+        },
+        "swesmith_py": {
+          "pass@1": 0.1888888888888889,
+          "pass@2": 0.26666666666666666,
+          "pass@3": 0.3
+        }
+      },
+      "resolved_rollouts": 142,
+      "agent_status": {
+        "max_steps": 92,
+        "resolved": 91,
+        "edited": 32,
+        "no_edit": 44,
+        "parse_error": 4,
+        "context_overflow": 4,
+        "compile_failed": 3
+      },
+      "verifier_status": {
+        "resolved": 142,
+        "unresolved_tests_failed": 46,
+        "unresolved_no_edit": 9,
+        "unresolved": 32,
+        "model_failure_no_edit": 37,
+        "model_failure_parse_error": 2,
+        "model_failure_max_steps": 1,
+        "model_failure_context_overflow": 1
+      },
+      "harness": {
+        "version": "lottie_code_agent_harness_v3",
+        "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+        "edit_checkpoint_step": 10,
+        "readonly_reminder_interval": 3
+      },
+      "sources": {
+        "function": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/qwen3_4b_baseline/function60_vllm/sample_results.jsonl",
+          "bytes": 299026,
+          "sha256": "584e3b2d325ceb882b3719533d4fde6832b39f6af0bdef24d108cff3d86f26da"
+        },
+        "swesmith_py": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/qwen3_4b_baseline/swesmith30_vllm/sample_results.jsonl",
+          "bytes": 166744,
+          "sha256": "a251bac0a765835fc8ab5f0be4c996fe4601db28817e24acb453903e458c9f46"
+        }
+      },
+      "data_role": "evaluation_only",
+      "exclude_from_training": true,
+      "key": "qwen3_4b_baseline",
+      "label": "Qwen3 4B Base",
+      "color": "#7A8694"
+    },
+    {
+      "format": "lottie_v3_full_eval90_pass3_summary_v1",
+      "model_key": "epoch_001",
+      "served_model": "qwen3-4b-epoch1-v3",
+      "task_count": 90,
+      "valid_samples": 270,
+      "aggregate": {
+        "pass@1": 0.5592592592592592,
+        "pass@2": 0.6333333333333333,
+        "pass@3": 0.6666666666666666
+      },
+      "by_dataset": {
+        "humanevalplus": {
+          "pass@1": 0.7777777777777778,
+          "pass@2": 0.8777777777777778,
+          "pass@3": 0.9333333333333333
+        },
+        "mbppplus": {
+          "pass@1": 0.788888888888889,
+          "pass@2": 0.8555555555555556,
+          "pass@3": 0.8666666666666667
+        },
+        "swesmith_py": {
+          "pass@1": 0.11111111111111112,
+          "pass@2": 0.16666666666666666,
+          "pass@3": 0.2
+        }
+      },
+      "resolved_rollouts": 151,
+      "agent_status": {
+        "max_steps": 87,
+        "resolved": 152,
+        "parse_error": 16,
+        "edited": 7,
+        "context_overflow": 8
+      },
+      "verifier_status": {
+        "resolved": 151,
+        "unresolved_tests_failed": 35,
+        "unresolved_no_edit": 4,
+        "model_failure_max_steps": 46,
+        "unresolved": 25,
+        "model_failure_context_overflow": 6,
+        "model_failure_parse_error": 3
+      },
+      "harness": {
+        "version": "lottie_code_agent_harness_v3",
+        "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+        "edit_checkpoint_step": 10,
+        "readonly_reminder_interval": 3
+      },
+      "sources": {
+        "function": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_001/function60_vllm/sample_results.jsonl",
+          "bytes": 294443,
+          "sha256": "83949a3c20714c3c580e0a956faf6537044c559690ae9aad0a6b150d7398450c"
+        },
+        "swesmith_py": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_001/swesmith30_vllm/sample_results.jsonl",
+          "bytes": 163859,
+          "sha256": "6ee1a87f8e1838fb59dda7553e6db111e0482490e967556175a512fc61aa19f1"
+        }
+      },
+      "data_role": "evaluation_only",
+      "exclude_from_training": true,
+      "key": "epoch_001",
+      "label": "Epoch 1",
+      "color": "#E29A2D"
+    },
+    {
+      "format": "lottie_v3_full_eval90_pass3_summary_v1",
+      "model_key": "epoch_003",
+      "served_model": "qwen3-4b-epoch3-v3",
+      "task_count": 90,
+      "valid_samples": 270,
+      "aggregate": {
+        "pass@1": 0.6074074074074075,
+        "pass@2": 0.6851851851851851,
+        "pass@3": 0.7222222222222222
+      },
+      "by_dataset": {
+        "humanevalplus": {
+          "pass@1": 0.7666666666666667,
+          "pass@2": 0.8555555555555556,
+          "pass@3": 0.9
+        },
+        "mbppplus": {
+          "pass@1": 0.7777777777777778,
+          "pass@2": 0.8222222222222223,
+          "pass@3": 0.8333333333333334
+        },
+        "swesmith_py": {
+          "pass@1": 0.2777777777777778,
+          "pass@2": 0.3777777777777778,
+          "pass@3": 0.43333333333333335
+        }
+      },
+      "resolved_rollouts": 164,
+      "agent_status": {
+        "resolved": 162,
+        "max_steps": 79,
+        "edited": 13,
+        "parse_error": 11,
+        "context_overflow": 4,
+        "no_edit": 1
+      },
+      "verifier_status": {
+        "resolved": 164,
+        "unresolved_tests_failed": 41,
+        "unresolved": 36,
+        "model_failure_max_steps": 21,
+        "model_failure_context_overflow": 3,
+        "model_failure_parse_error": 4,
+        "model_failure_no_edit": 1
+      },
+      "harness": {
+        "version": "lottie_code_agent_harness_v3",
+        "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+        "edit_checkpoint_step": 10,
+        "readonly_reminder_interval": 3
+      },
+      "sources": {
+        "function": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_003/function60_vllm/sample_results.jsonl",
+          "bytes": 294524,
+          "sha256": "155c36c81c2bda742f441f98e35ac4713bd5d64dae7a6bd832ca850dcb892a29"
+        },
+        "swesmith_py": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_003/swesmith30_vllm/sample_results.jsonl",
+          "bytes": 164139,
+          "sha256": "787009db291afd4cb7d3f69aabc361b5dc07327ab086ea2ab4153e263ddb6111"
+        }
+      },
+      "data_role": "evaluation_only",
+      "exclude_from_training": true,
+      "key": "epoch_003",
+      "label": "Epoch 3",
+      "color": "#2F8F62"
+    },
+    {
+      "format": "lottie_v3_full_eval90_pass3_summary_v1",
+      "model_key": "epoch_005",
+      "served_model": "qwen3-4b-epoch5-v3",
+      "task_count": 90,
+      "valid_samples": 270,
+      "aggregate": {
+        "pass@1": 0.5925925925925927,
+        "pass@2": 0.6814814814814815,
+        "pass@3": 0.7111111111111111
+      },
+      "by_dataset": {
+        "humanevalplus": {
+          "pass@1": 0.7777777777777779,
+          "pass@2": 0.8777777777777778,
+          "pass@3": 0.9
+        },
+        "mbppplus": {
+          "pass@1": 0.7777777777777778,
+          "pass@2": 0.8333333333333334,
+          "pass@3": 0.8333333333333334
+        },
+        "swesmith_py": {
+          "pass@1": 0.22222222222222224,
+          "pass@2": 0.3333333333333333,
+          "pass@3": 0.4
+        }
+      },
+      "resolved_rollouts": 160,
+      "agent_status": {
+        "resolved": 150,
+        "max_steps": 86,
+        "edited": 20,
+        "parse_error": 6,
+        "compile_failed": 6,
+        "context_overflow": 2
+      },
+      "verifier_status": {
+        "resolved": 160,
+        "unresolved_tests_failed": 38,
+        "unresolved_no_edit": 2,
+        "model_failure_max_steps": 31,
+        "unresolved": 35,
+        "model_failure_parse_error": 3,
+        "model_failure_context_overflow": 1
+      },
+      "harness": {
+        "version": "lottie_code_agent_harness_v3",
+        "readonly_budget_policy": "append_nonmod3_action_reset_v1",
+        "edit_checkpoint_step": 10,
+        "readonly_reminder_interval": 3
+      },
+      "sources": {
+        "function": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_005/function60_vllm/sample_results.jsonl",
+          "bytes": 294500,
+          "sha256": "8932a6f1e488cda57b223f99b202fcea37ed817facef3ffc27787bd4cf4d0ba2"
+        },
+        "swesmith_py": {
+          "path": "<remote_root>/lottie-agent-linux/outputs/lottie_v3_eval90_pass3_t05_steps20_60_v2/epoch_005/swesmith30_vllm/sample_results.jsonl",
+          "bytes": 164022,
+          "sha256": "ef2563992274392fa6ad8009c61a4d2950e808376c35bf5df4ead32ae3012856"
+        }
+      },
+      "data_role": "evaluation_only",
+      "exclude_from_training": true,
+      "key": "epoch_005",
+      "label": "Epoch 5",
+      "color": "#B34D72"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "format": "lottie_swesmith_runnable_v1",
+  "source_tasks": "<project_root>/data/swesmith_local/tasks.jsonl",
+  "gold_sanity_results": "<project_root>/data/swesmith_local/gold_sanity.jsonl",
+  "output": "<project_root>/data/swesmith_local/tasks_runnable.jsonl",
+  "tasks_in": 145,
+  "tasks_out": 145,
+  "excluded": 0,
+  "split_counts": {
+    "train": 100,
+    "validation": 15,
+    "evaluation": 30
+  },
+  "repo_count": 14,
+  "verification_scope": {
+    "fail_to_pass": "all listed tests",
+    "pass_to_pass": "first 10 listed tests",
+    "gold": "reverse bug patch, clean-tree equality, and all FAIL_TO_PASS tests",
+    "official_comparable": false
+  }
+}

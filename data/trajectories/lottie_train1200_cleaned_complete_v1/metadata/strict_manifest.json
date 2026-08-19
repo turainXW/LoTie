@@ -1,0 +1,41 @@
+{
+  "format": "lottie_strict_sft_package_v1",
+  "created_at": "2026-08-15T07:43:46.439187+00:00",
+  "source_run": "<project_root>/outputs/training_runs/deepseek_v4_flash_train300_rollout4_v1",
+  "source_clean_manifest_sha256": "2492ba5004c4d9e66d680e53cb41ada353f82b974eeab2478d0423e98a7bf4ab",
+  "source_manifest_sha256": "317d38e139c1620a4e3e0396a85672a2e1884781b8a1faa0be1bf1875836b5f6",
+  "source_sample_result_count": 1200,
+  "source_valid_samples": 1200,
+  "source_resolved_samples": 1090,
+  "strict_sft_rows": 996,
+  "unique_trajectory_ids": 996,
+  "assistant_json_calls_validated": 11147,
+  "terminal_finish_rows": 996,
+  "message_count": {
+    "min": 13,
+    "max": 83
+  },
+  "message_chars": {
+    "min": 11605,
+    "max": 141306
+  },
+  "training_state": "clean_messages_not_tokenized",
+  "required_next_step": "tokenize with the exact target model tokenizer, then apply assistant-only token loss masks",
+  "files": {
+    "sft_strict.jsonl": {
+      "bytes": 26362218,
+      "sha256": "4174d34eca32480ba5f8751c8d80ffee550a02aa5d5ac8823ed30ebdbf918ebe",
+      "rows": 996
+    },
+    "sft_exclusions.jsonl": {
+      "bytes": 90923,
+      "sha256": "1158c0d78b0edbd2cf8b398aa5b07b2fd76faae555cbbde2aed40b87229d4a7f",
+      "rows": 204
+    },
+    "duplicates.jsonl": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "rows": 0
+    }
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "format": "lottie_evalplus_runnable_v1",
+  "tasks_in": 290,
+  "tasks_out": 290,
+  "excluded": 0,
+  "dataset_counts": {
+    "mbppplus": 165,
+    "humanevalplus": 125
+  },
+  "split_counts": {
+    "train": 200,
+    "validation": 30,
+    "evaluation": 60
+  },
+  "verification_scope": {
+    "reference": "reference implementation compiles and executes all official base and plus inputs",
+    "negative_control": "target function replaced by NotImplementedError and must fail",
+    "official_comparable": false
+  }
+}

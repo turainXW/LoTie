@@ -1,0 +1,56 @@
+{
+  "format": "lottie_qwen_lora_experiment_config_v1",
+  "run_name": "qwen3_4b_lottie_lora_maskv2_r32_e2_v1",
+  "model": "Qwen3-4B-Instruct-2507",
+  "dataset": "qwen3_4b_instruct_2507_primary_32k_maskv2",
+  "dataset_rows": 1071,
+  "context_tokens_per_epoch": 7585639,
+  "supervised_tokens_per_epoch": 709568,
+  "max_sequence_length": 32768,
+  "dtype": "bfloat16",
+  "attention": "sdpa",
+  "gradient_checkpointing": true,
+  "gradient_checkpointing_use_reentrant": false,
+  "optimizer": "AdamW",
+  "learning_rate": 5e-05,
+  "weight_decay": 0.0,
+  "scheduler": "cosine_with_warmup",
+  "warmup_ratio": 0.03,
+  "warmup_steps": 13,
+  "max_grad_norm": 1.0,
+  "epochs": 2,
+  "microbatches_per_epoch": 457,
+  "optimizer_updates_per_epoch": 229,
+  "planned_optimizer_updates": 458,
+  "gradient_accumulation_steps": 2,
+  "batch_profile": {
+    "4096": 8,
+    "8192": 2,
+    "16384": 1,
+    "24576": 1,
+    "32768": 1
+  },
+  "lora": {
+    "rank": 32,
+    "alpha": 64,
+    "dropout": 0.05,
+    "bias": "none",
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ]
+  },
+  "seed": 42,
+  "checkpoint_policy": {
+    "save_every_epoch": true,
+    "adapter_and_tokenizer_saved": true,
+    "optimizer_state_saved": false,
+    "scheduler_state_saved": false,
+    "continuation_between_epochs": "same_process_in_memory"
+  }
+}

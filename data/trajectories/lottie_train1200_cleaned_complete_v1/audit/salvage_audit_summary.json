@@ -1,0 +1,41 @@
+{
+  "format": "lottie_salvage_independent_audit_v1",
+  "created_at": "2026-08-15T07:43:35.846709+00:00",
+  "salvage_dir": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1",
+  "backup_dir": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/raw_backup",
+  "trajectory_count": 90,
+  "candidate_count": 94,
+  "manual_review_count": 4,
+  "integrity_passed": 90,
+  "integrity_failed": 0,
+  "backup": {
+    "snapshot_id": "06dfc197dd9621cc56bf52bf2cafa0bbe9eb0a060cd2e5bf5bcbb7deac6b5471",
+    "files_checked": 662,
+    "bytes_checked": 43635498,
+    "hash_failures": [],
+    "passed": true
+  },
+  "quality_tiers": {
+    "A": 73,
+    "B": 13,
+    "C": 4
+  },
+  "quality_flags": {
+    "high_repair_count": 4,
+    "premature_finish_removed": 2,
+    "synthetic_finish": 11
+  },
+  "tool_counts": {
+    "execute_bash": 1153,
+    "finish": 90,
+    "git_diff": 81,
+    "run_tests": 241,
+    "str_replace_editor": 511
+  },
+  "recommendation": {
+    "tier_a": "Suitable for primary SFT after target-tokenizer length and loss-mask validation.",
+    "tier_b": "Usable with lower sampling weight; contains a synthetic terminal finish or a rejected premature finish removal.",
+    "tier_c": "Keep isolated for ablation/manual review because more than three failed parser turns were removed."
+  },
+  "failed_trajectory_ids": []
+}

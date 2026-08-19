@@ -1,0 +1,49 @@
+{
+  "format": "lottie_harness_version_registry_v1",
+  "current_version": "lottie_code_agent_harness_v3",
+  "versions": [
+    {
+      "version": "lottie_code_agent_harness_v1",
+      "readonly_policy_version": "block_readonly_after_checkpoint_grace_v1",
+      "description": "After the read-only checkpoint and grace window, read-only actions were blocked while no repository diff existed.",
+      "checkpoint_step": 10,
+      "grace_steps": 3,
+      "reminder_interval": null,
+      "reset_on_modification_action": false,
+      "checks_repository_diff": true,
+      "blocks_actions": true,
+      "preserves_tool_result": false,
+      "known_output_roots": [
+        "<remote_root>/lottie-agent-linux/outputs/lottie_qwen3_4b_sft_eval90_pass3_t05_v1"
+      ]
+    },
+    {
+      "version": "lottie_code_agent_harness_v2",
+      "readonly_policy_version": "append_every_nonmod_after_checkpoint_grace_diff_guard_v1",
+      "description": "Read-only tool results were preserved and an edit recommendation was appended after each eligible non-modification action while no repository diff existed.",
+      "checkpoint_step": 10,
+      "grace_steps": 3,
+      "reminder_interval": 1,
+      "reset_on_modification_action": false,
+      "checks_repository_diff": true,
+      "blocks_actions": false,
+      "preserves_tool_result": true,
+      "known_output_roots": [
+        "<remote_root>/lottie-agent-linux/outputs/lottie_qwen3_4b_smith_eval30_pass3_steps60_t05_appendbudget_v1"
+      ]
+    },
+    {
+      "version": "lottie_code_agent_harness_v3",
+      "readonly_policy_version": "append_nonmod3_action_reset_v1",
+      "description": "The first ten actions are reminder-free. Afterwards one reminder is appended after every three consecutive non-modification actions; any modification action resets the counter.",
+      "checkpoint_step": 10,
+      "grace_steps": 0,
+      "reminder_interval": 3,
+      "reset_on_modification_action": true,
+      "checks_repository_diff": false,
+      "blocks_actions": false,
+      "preserves_tool_result": true,
+      "known_output_roots": []
+    }
+  ]
+}

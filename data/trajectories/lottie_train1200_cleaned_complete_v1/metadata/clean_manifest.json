@@ -1,0 +1,79 @@
+{
+  "format": "lottie_clean_trajectory_manifest_v1",
+  "source_run": "<project_root>/outputs/training_runs/deepseek_v4_flash_train300_rollout4_v1",
+  "source_manifest_sha256": "317d38e139c1620a4e3e0396a85672a2e1884781b8a1faa0be1bf1875836b5f6",
+  "source_sample_result_count": 1200,
+  "collection_in_progress": false,
+  "counts": {
+    "finish_appended": 27,
+    "rl_negative": 110,
+    "rl_positive": 1090,
+    "rl_rows": 1200,
+    "sample_results": 1200,
+    "sft_rows": 996,
+    "valid_samples": 1200
+  },
+  "datasets": {
+    "humanevalplus": 320,
+    "mbppplus": 480,
+    "swesmith_py": 400
+  },
+  "agent_statuses": {
+    "edited": 320,
+    "max_steps": 51,
+    "no_edit": 2,
+    "parse_error": 1,
+    "resolved": 826
+  },
+  "verifier_statuses": {
+    "model_failure_no_edit": 2,
+    "model_failure_parse_error": 1,
+    "resolved": 1090,
+    "unresolved": 22,
+    "unresolved_no_edit": 3,
+    "unresolved_patch_apply_failed": 1,
+    "unresolved_tests_failed": 80,
+    "unresolved_timeout": 1
+  },
+  "sft_exclusion_reasons": {
+    "invalid_tool_protocol": 94,
+    "non_trainable_status": 1,
+    "verifier_unresolved": 109
+  },
+  "secret_redactions": 0,
+  "lengths": {
+    "message_count": {
+      "min": 13,
+      "max": 83
+    },
+    "message_chars": {
+      "min": 11605,
+      "max": 148205
+    },
+    "assistant_turns": {
+      "min": 6,
+      "max": 41
+    }
+  },
+  "policy": {
+    "raw_run_is_read_only": true,
+    "sft": "verified success, train split, canonical JSON tool calls, exact duplicates removed",
+    "rl": "all verifier-valid train rollouts with binary reward",
+    "non_trainable_statuses": [
+      "context_overflow",
+      "infrastructure_blocked",
+      "model_api_failure",
+      "parse_error",
+      "runner_error"
+    ],
+    "absolute_paths_sanitized": true,
+    "known_secret_shapes_redacted": true,
+    "token_length_filter": "deferred until target tokenizer masking"
+  },
+  "outputs": {
+    "sft_success": "<project_root>/outputs/training_datasets/lottie_train1200_clean_v1/sft_success.jsonl",
+    "rl_rollouts": "<project_root>/outputs/training_datasets/lottie_train1200_clean_v1/rl_rollouts.jsonl",
+    "sft_exclusions": "<project_root>/outputs/training_datasets/lottie_train1200_clean_v1/sft_exclusions.jsonl",
+    "duplicates": "<project_root>/outputs/training_datasets/lottie_train1200_clean_v1/duplicates.jsonl"
+  }
+}

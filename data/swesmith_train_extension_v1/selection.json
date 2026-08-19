@@ -1,0 +1,345 @@
+{
+  "format": "lottie_swesmith_train_extension_v1",
+  "selection_seed": "lottie-swesmith-train-extension-v1",
+  "dataset": {
+    "name": "SWE-bench/SWE-smith-py",
+    "revision": "77cab9055d42ab4a5c25c89a8f937096db13558e"
+  },
+  "source_files": [
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00000-of-00011.parquet",
+      "sha256": "302a383bb9229c42063ff2364b2ea637e9e7a20d82e0d566614d3aba9234833d",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00001-of-00011.parquet",
+      "sha256": "f15e5b8ab49866e93245a736056fab680d6dde8fb5c2ba89c06241cf12a32afe",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00002-of-00011.parquet",
+      "sha256": "67512898124c03132ae5bbf78866610571a565724dcb6a2064009db8a6825613",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00003-of-00011.parquet",
+      "sha256": "cc4c9812480faac2bc2de49e78a271d17cc8dcd89a8af2268246c3c8632fd27d",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00004-of-00011.parquet",
+      "sha256": "6110c76e568c0ee03eb1c86d208887154c6406237f532436cf72ed2c265073ca",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00005-of-00011.parquet",
+      "sha256": "517420b48132eda3c073e6b9bc5fecbaf34c3dea7f3fec49a46f8615584f8200",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00006-of-00011.parquet",
+      "sha256": "8e55de0daa541c031779f17d6ef04ebc3a4e2caad708d3137edb4587d89e60f3",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00007-of-00011.parquet",
+      "sha256": "c558fc3b6507f36ae520a8b23ac0cd71be7d7c8bb15c0b09060fe18d83d21045",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00008-of-00011.parquet",
+      "sha256": "b861958c450293ee717c00659958d2f334a697edf804f33c10c75bd05b8787e7",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00009-of-00011.parquet",
+      "sha256": "20923272dab2706c1e07e9e11a19373c5c642efbb594a3b1c104440cf8cfc132",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00010-of-00011.parquet",
+      "sha256": "3b7c09dfa07209f550f210344caac267c2ac5ea9c6eefa84c67845ecdff0b6df",
+      "rows": 4628
+    }
+  ],
+  "existing_selection": {
+    "path": "<project_root>/data/dataset_splits_v1/selection.json",
+    "sha256": "af474aa001eeb2ba682ef6ab408a6e656d9ff35a52697f5edd4e9b6d52025b73",
+    "excluded_repo_count": 14,
+    "excluded_instance_count": 145
+  },
+  "gold_policy": {
+    "visible_to_agent": false,
+    "swesmith_py": "reverse hidden bug-injection patch; verify FAIL_TO_PASS and PASS_TO_PASS"
+  },
+  "filters": {
+    "swesmith_py": "one file, 2-30 changed lines, 1-20 FAIL_TO_PASS, non-empty PASS_TO_PASS, statement >=80 chars",
+    "repo_split": true,
+    "repository_disjoint_from_existing_train_validation_evaluation": true,
+    "task_selection": "mutation-kind stratified round robin with deterministic SHA-256 ranking"
+  },
+  "candidate_summary": {
+    "dataset_rows": 50908,
+    "eligible_repo_count": 116,
+    "selected_repo_count": 20,
+    "tasks_per_repo": 5,
+    "repository_selection": "explicit"
+  },
+  "splits": {
+    "train": {
+      "role": "trajectory_collection_and_training_extension",
+      "count": 100,
+      "swesmith_py": {
+        "count": 100,
+        "profiles": {
+          "swesmith/cool-RR__PySnooper.57472b46": {
+            "source": "https://github.com/cool-RR/PySnooper",
+            "commit": "57472b46",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/pallets__markupsafe.620c06c9": {
+            "source": "https://github.com/pallets/markupsafe",
+            "commit": "620c06c9",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/matthewwithanm__python-markdownify.6258f5c3": {
+            "source": "https://github.com/matthewwithanm/python-markdownify",
+            "commit": "6258f5c3",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/chardet__chardet.9630f238": {
+            "source": "https://github.com/chardet/chardet",
+            "commit": "9630f238",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/google__textfsm.c31b6007": {
+            "source": "https://github.com/google/textfsm",
+            "commit": "c31b6007",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/tkrajina__gpxpy.09fc46b3": {
+            "source": "https://github.com/tkrajina/gpxpy",
+            "commit": "09fc46b3",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/rubik__radon.54b88e58": {
+            "source": "https://github.com/rubik/radon",
+            "commit": "54b88e58",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/buriy__python-readability.40256f40": {
+            "source": "https://github.com/buriy/python-readability",
+            "commit": "40256f40",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/borntyping__python-colorlog.dfa10f59": {
+            "source": "https://github.com/borntyping/python-colorlog",
+            "commit": "dfa10f59",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/r1chardj0n3s__parse.30da9e4f": {
+            "source": "https://github.com/r1chardj0n3s/parse",
+            "commit": "30da9e4f",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/martinblech__xmltodict.0952f382": {
+            "source": "https://github.com/martinblech/xmltodict",
+            "commit": "0952f382",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/aio-libs__async-timeout.d0baa9f1": {
+            "source": "https://github.com/aio-libs/async-timeout",
+            "commit": "d0baa9f1",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/jaraco__inflect.c079a96a": {
+            "source": "https://github.com/jaraco/inflect",
+            "commit": "c079a96a",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/joke2k__faker.8b401a7d": {
+            "source": "https://github.com/joke2k/faker",
+            "commit": "8b401a7d",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/cloudpipe__cloudpickle.6220b0ce": {
+            "source": "https://github.com/cloudpipe/cloudpickle",
+            "commit": "6220b0ce",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/erikrose__parsimonious.0d3f5f93": {
+            "source": "https://github.com/erikrose/parsimonious",
+            "commit": "0d3f5f93",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/hukkin__tomli.443a0c1b": {
+            "source": "https://github.com/hukkin/tomli",
+            "commit": "443a0c1b",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/Mimino666__langdetect.a1598f1a": {
+            "source": "https://github.com/Mimino666/langdetect",
+            "commit": "a1598f1a",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/theskumar__python-dotenv.2b8635b7": {
+            "source": "https://github.com/theskumar/python-dotenv",
+            "commit": "2b8635b7",
+            "commit_kind": "dataset_commit_prefix"
+          },
+          "swesmith/pwaller__pyfiglet.f8c5f35b": {
+            "source": "https://github.com/pwaller/pyfiglet",
+            "commit": "f8c5f35b",
+            "commit_kind": "dataset_commit_prefix"
+          }
+        },
+        "instance_ids": [
+          "cool-RR__PySnooper.57472b46.lm_rewrite__5rvf0awz",
+          "cool-RR__PySnooper.57472b46.func_basic__0118ryv0",
+          "cool-RR__PySnooper.57472b46.func_pm_op_change_const__5sahiend",
+          "cool-RR__PySnooper.57472b46.combine_file__o2g12nrt",
+          "cool-RR__PySnooper.57472b46.lm_rewrite__031xvy9b",
+          "pallets__markupsafe.620c06c9.pr_469",
+          "pallets__markupsafe.620c06c9.pr_418",
+          "pallets__markupsafe.620c06c9.func_basic__nhzpgszj",
+          "pallets__markupsafe.620c06c9.combine_file__6fk2d773",
+          "pallets__markupsafe.620c06c9.lm_rewrite__o5b5ezbl",
+          "matthewwithanm__python-markdownify.6258f5c3.func_pm_remove_cond__gi4wg8rt",
+          "matthewwithanm__python-markdownify.6258f5c3.func_pm_ctrl_shuffle__4la43w29",
+          "matthewwithanm__python-markdownify.6258f5c3.func_pm_remove_assign__iykks8mn",
+          "matthewwithanm__python-markdownify.6258f5c3.pr_181",
+          "matthewwithanm__python-markdownify.6258f5c3.lm_rewrite__npl8i8n2",
+          "chardet__chardet.9630f238.func_basic__8dtpwfw5",
+          "chardet__chardet.9630f238.combine_file__z5upmzn7",
+          "chardet__chardet.9630f238.func_pm_ctrl_invert_if__adytkf6x",
+          "chardet__chardet.9630f238.func_pm_op_change__0yhdolul",
+          "chardet__chardet.9630f238.func_pm_remove_assign__7gf1vedy",
+          "google__textfsm.c31b6007.func_pm_ctrl_shuffle__xxvu3vpk",
+          "google__textfsm.c31b6007.func_pm_remove_assign__jx1u76g0",
+          "google__textfsm.c31b6007.func_pm_class_rm_funcs__ryghe69p",
+          "google__textfsm.c31b6007.func_pm_ctrl_invert_if__lzx30zhc",
+          "google__textfsm.c31b6007.func_pm_class_rm_base__z0gd60hx",
+          "tkrajina__gpxpy.09fc46b3.func_pm_ctrl_shuffle__3i13t3dk",
+          "tkrajina__gpxpy.09fc46b3.func_pm_remove_cond__vju53lx9",
+          "tkrajina__gpxpy.09fc46b3.func_pm_class_rm_funcs__3rlllb62",
+          "tkrajina__gpxpy.09fc46b3.pr_282",
+          "tkrajina__gpxpy.09fc46b3.func_pm_remove_loop__hofas3sw",
+          "rubik__radon.54b88e58.func_basic__peqtv3lc",
+          "rubik__radon.54b88e58.combine_file__aeuepbc6",
+          "rubik__radon.54b88e58.func_pm_class_rm_funcs__59ri2pk0",
+          "rubik__radon.54b88e58.func_pm_ctrl_shuffle__ivbfu3f3",
+          "rubik__radon.54b88e58.lm_rewrite__xgm9z0yi",
+          "buriy__python-readability.40256f40.func_pm_remove_loop__3p4o2p5c",
+          "buriy__python-readability.40256f40.func_pm_remove_assign__6d55u4ru",
+          "buriy__python-readability.40256f40.func_basic__iiezu4eh",
+          "buriy__python-readability.40256f40.combine_file__x5n1fqg7",
+          "buriy__python-readability.40256f40.func_pm_remove_cond__faeawchf",
+          "borntyping__python-colorlog.dfa10f59.lm_rewrite__7enf7xmd",
+          "borntyping__python-colorlog.dfa10f59.func_basic__sk9xdcrj",
+          "borntyping__python-colorlog.dfa10f59.combine_file__hofui8tk",
+          "borntyping__python-colorlog.dfa10f59.func_pm_ctrl_shuffle__1oe4qn2p",
+          "borntyping__python-colorlog.dfa10f59.func_pm_class_rm_base__8anh0pe1",
+          "r1chardj0n3s__parse.30da9e4f.func_pm_ctrl_invert_if__zvx30w6d",
+          "r1chardj0n3s__parse.30da9e4f.func_pm_remove_loop__4kca4mum",
+          "r1chardj0n3s__parse.30da9e4f.lm_rewrite__5ibycjd8",
+          "r1chardj0n3s__parse.30da9e4f.func_pm_ctrl_shuffle__588ltq64",
+          "r1chardj0n3s__parse.30da9e4f.func_pm_remove_assign__lxubxuzv",
+          "martinblech__xmltodict.0952f382.lm_rewrite__4f2hqh4z",
+          "martinblech__xmltodict.0952f382.pr_363",
+          "martinblech__xmltodict.0952f382.combine_file__wpu0bspk",
+          "martinblech__xmltodict.0952f382.func_basic__4ry5wj8i",
+          "martinblech__xmltodict.0952f382.func_pm_remove_assign__f7fiaomg",
+          "aio-libs__async-timeout.d0baa9f1.lm_rewrite__ly5l6tf8",
+          "aio-libs__async-timeout.d0baa9f1.func_basic__38edt9p9",
+          "aio-libs__async-timeout.d0baa9f1.combine_file__bwy4m1w4",
+          "aio-libs__async-timeout.d0baa9f1.lm_rewrite__kqd6t1mb",
+          "aio-libs__async-timeout.d0baa9f1.func_basic__etiyc452",
+          "jaraco__inflect.c079a96a.func_basic__m7t7bx90",
+          "jaraco__inflect.c079a96a.lm_rewrite__pgq3cr03",
+          "jaraco__inflect.c079a96a.func_pm_remove_wrapper__23p6n5ak",
+          "jaraco__inflect.c079a96a.func_pm_op_swap__lyukks5e",
+          "jaraco__inflect.c079a96a.func_pm_op_change__9qoeffi9",
+          "joke2k__faker.8b401a7d.func_pm_remove_cond__u4uan9sy",
+          "joke2k__faker.8b401a7d.func_pm_remove_assign__su0lsign",
+          "joke2k__faker.8b401a7d.lm_rewrite__yznt63as",
+          "joke2k__faker.8b401a7d.func_pm_ctrl_shuffle__nreuzr4i",
+          "joke2k__faker.8b401a7d.func_pm_ctrl_invert_if__mmx1mulh",
+          "cloudpipe__cloudpickle.6220b0ce.func_pm_remove_wrapper__6h2csdo6",
+          "cloudpipe__cloudpickle.6220b0ce.func_pm_ctrl_shuffle__fddb1ph6",
+          "cloudpipe__cloudpickle.6220b0ce.func_pm_op_swap__cif6nxws",
+          "cloudpipe__cloudpickle.6220b0ce.func_basic__you70tpu",
+          "cloudpipe__cloudpickle.6220b0ce.func_pm_remove_cond__ersl8hw1",
+          "erikrose__parsimonious.0d3f5f93.combine_file__o06arzju",
+          "erikrose__parsimonious.0d3f5f93.lm_rewrite__flbnoquk",
+          "erikrose__parsimonious.0d3f5f93.func_pm_ctrl_invert_if__ctuc3dwn",
+          "erikrose__parsimonious.0d3f5f93.func_pm_class_rm_funcs__wfv8biqb",
+          "erikrose__parsimonious.0d3f5f93.func_basic__g15cutde",
+          "hukkin__tomli.443a0c1b.func_pm_remove_assign__wlpbew8z",
+          "hukkin__tomli.443a0c1b.func_pm_remove_wrapper__6y7b6806",
+          "hukkin__tomli.443a0c1b.combine_file__z5zcpcux",
+          "hukkin__tomli.443a0c1b.func_pm_ctrl_invert_if__uporogs2",
+          "hukkin__tomli.443a0c1b.pr_229",
+          "Mimino666__langdetect.a1598f1a.func_pm_class_rm_funcs__842dr37d",
+          "Mimino666__langdetect.a1598f1a.func_basic__acvk7ipt",
+          "Mimino666__langdetect.a1598f1a.func_pm_ctrl_shuffle__qy0ywgtr",
+          "Mimino666__langdetect.a1598f1a.func_pm_ctrl_invert_if__zrbixrik",
+          "Mimino666__langdetect.a1598f1a.func_pm_remove_cond__jtdra9ut",
+          "theskumar__python-dotenv.2b8635b7.func_pm_remove_assign__9y71521c",
+          "theskumar__python-dotenv.2b8635b7.lm_rewrite__gklwunnc",
+          "theskumar__python-dotenv.2b8635b7.combine_file__j62kft93",
+          "theskumar__python-dotenv.2b8635b7.pr_456",
+          "theskumar__python-dotenv.2b8635b7.func_pm_remove_loop__c774yrzp",
+          "pwaller__pyfiglet.f8c5f35b.combine_file__2cgpkgxe",
+          "pwaller__pyfiglet.f8c5f35b.func_pm_ctrl_shuffle__n7wjcwpl",
+          "pwaller__pyfiglet.f8c5f35b.func_basic__zh9g8b3e",
+          "pwaller__pyfiglet.f8c5f35b.func_pm_ctrl_invert_if__c3il7wrt",
+          "pwaller__pyfiglet.f8c5f35b.func_pm_op_swap__4tsl9r61"
+        ],
+        "per_repo_counts": {
+          "swesmith/cool-RR__PySnooper.57472b46": 5,
+          "swesmith/pallets__markupsafe.620c06c9": 5,
+          "swesmith/matthewwithanm__python-markdownify.6258f5c3": 5,
+          "swesmith/chardet__chardet.9630f238": 5,
+          "swesmith/google__textfsm.c31b6007": 5,
+          "swesmith/tkrajina__gpxpy.09fc46b3": 5,
+          "swesmith/rubik__radon.54b88e58": 5,
+          "swesmith/buriy__python-readability.40256f40": 5,
+          "swesmith/borntyping__python-colorlog.dfa10f59": 5,
+          "swesmith/r1chardj0n3s__parse.30da9e4f": 5,
+          "swesmith/martinblech__xmltodict.0952f382": 5,
+          "swesmith/aio-libs__async-timeout.d0baa9f1": 5,
+          "swesmith/jaraco__inflect.c079a96a": 5,
+          "swesmith/joke2k__faker.8b401a7d": 5,
+          "swesmith/cloudpipe__cloudpickle.6220b0ce": 5,
+          "swesmith/erikrose__parsimonious.0d3f5f93": 5,
+          "swesmith/hukkin__tomli.443a0c1b": 5,
+          "swesmith/Mimino666__langdetect.a1598f1a": 5,
+          "swesmith/theskumar__python-dotenv.2b8635b7": 5,
+          "swesmith/pwaller__pyfiglet.f8c5f35b": 5
+        }
+      }
+    },
+    "validation": {
+      "role": "unchanged_existing_split",
+      "count": 0,
+      "swesmith_py": {
+        "count": 0,
+        "profiles": {},
+        "instance_ids": []
+      }
+    },
+    "evaluation": {
+      "role": "unchanged_existing_split",
+      "count": 0,
+      "swesmith_py": {
+        "count": 0,
+        "profiles": {},
+        "instance_ids": []
+      }
+    }
+  },
+  "preflight": {
+    "status": "selection_only",
+    "rule": "Only setup-ready and gold-sanity-passed tasks enter the runnable denominator."
+  }
+}

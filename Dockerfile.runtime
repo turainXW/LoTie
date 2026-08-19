@@ -1,0 +1,35 @@
+FROM python:3.11-slim
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1 \
+    PIP_DISABLE_PIP_VERSION_CHECK=1 \
+    CODEAGENT_IN_DOCKER=1
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+        bash \
+        ca-certificates \
+        curl \
+        git \
+        openssh-client \
+        ripgrep \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /opt/codeagent
+
+COPY pyproject.toml README_zh.md ./
+COPY requirements*.txt ./
+COPY src ./src
+COPY scripts ./scripts
+
+RUN python -m pip install --upgrade pip \
+    && python -m pip install -e ".[dev,swegym]" \
+    && python -m pip cache purge
+
+RUN useradd --create-home --shell /bin/bash --uid 1000 agent
+USER agent
+
+WORKDIR /workspace/repo
+
+ENTRYPOINT ["codeagent"]
+CMD ["--help"]

@@ -1,0 +1,180 @@
+{
+  "format": "lottie_eval_selection_v1",
+  "name": "lottie_local_eval90",
+  "role": "evaluation_only",
+  "exclude_from_training": true,
+  "created_from": {
+    "mbppplus": "evalplus/mbppplus",
+    "humanevalplus": "evalplus/humanevalplus",
+    "swesmith_py": "SWE-bench/SWE-smith-py"
+  },
+  "policy": {
+    "problem_search_index": false,
+    "gold_patch_visible_to_agent": false,
+    "hidden_tests_visible_to_agent": false,
+    "web_search_function_tasks": false,
+    "web_search_repo_tasks": "docs_only_no_instance_id_or_exact_problem_statement",
+    "official_swesmith_comparable": false
+  },
+  "sets": {
+    "mbppplus": {
+      "count": 30,
+      "difficulty": "low",
+      "task_ids": [
+        2,
+        3,
+        4,
+        6,
+        7,
+        8,
+        9,
+        11,
+        12,
+        14,
+        16,
+        18,
+        19,
+        58,
+        61,
+        63,
+        64,
+        65,
+        68,
+        69,
+        75,
+        87,
+        88,
+        90,
+        95,
+        99,
+        100,
+        102,
+        108,
+        131
+      ]
+    },
+    "humanevalplus": {
+      "count": 30,
+      "difficulty": "medium",
+      "task_ids": [
+        "HumanEval/0",
+        "HumanEval/1",
+        "HumanEval/3",
+        "HumanEval/6",
+        "HumanEval/9",
+        "HumanEval/10",
+        "HumanEval/13",
+        "HumanEval/17",
+        "HumanEval/18",
+        "HumanEval/19",
+        "HumanEval/20",
+        "HumanEval/21",
+        "HumanEval/25",
+        "HumanEval/31",
+        "HumanEval/32",
+        "HumanEval/33",
+        "HumanEval/36",
+        "HumanEval/39",
+        "HumanEval/40",
+        "HumanEval/44",
+        "HumanEval/46",
+        "HumanEval/47",
+        "HumanEval/49",
+        "HumanEval/56",
+        "HumanEval/59",
+        "HumanEval/68",
+        "HumanEval/70",
+        "HumanEval/73",
+        "HumanEval/79",
+        "HumanEval/90"
+      ]
+    },
+    "swesmith_py": {
+      "count": 30,
+      "difficulty": "repository_repair_mixed",
+      "runtime": "local_venv_unofficial",
+      "profiles": {
+        "swesmith/agronholm__exceptiongroup.0b4f4937": {
+          "source": "https://github.com/agronholm/exceptiongroup",
+          "commit": "0b4f49378b585a338ae10abd72ec2006c5057d7b",
+          "python": "3.10",
+          "install": "python -m pip install -e ."
+        },
+        "swesmith/bottlepy__bottle.a8dfef30": {
+          "source": "https://github.com/bottlepy/bottle",
+          "commit": "a8dfef301dec35f13e7578306002c40796651629",
+          "python": "3.10",
+          "install": "python -m pip install -e ."
+        },
+        "swesmith/oauthlib__oauthlib.1fd52536": {
+          "source": "https://github.com/oauthlib/oauthlib",
+          "commit": "1fd5253630c03e3f12719dd8c13d43111f66a8d2",
+          "python": "3.10",
+          "install": "python -m pip install -e ."
+        },
+        "swesmith/facelessuser__soupsieve.a8080d97": {
+          "source": "https://github.com/facelessuser/soupsieve",
+          "commit": "a8080d97a0355e316981cb0c5c887a861c4244e3",
+          "python": "3.10",
+          "install": "python -m pip install -e ."
+        },
+        "swesmith/tobymao__sqlglot.036601ba": {
+          "source": "https://github.com/tobymao/sqlglot",
+          "commit": "036601ba9cbe4d175d6a9d38bc27587eab858968",
+          "python": "3.10",
+          "install": "python -m pip install -e \".[dev]\""
+        },
+        "swesmith/python-trio__trio.cfbbe2c1": {
+          "source": "https://github.com/python-trio/trio",
+          "commit": "cfbbe2c1f96e93b19bc2577d2cab3f4fe2e81153",
+          "python": "3.10",
+          "install": "python -m pip install -e ."
+        }
+      },
+      "instance_ids": [
+        "agronholm__exceptiongroup.0b4f4937.combine_file__i0w4anf7",
+        "agronholm__exceptiongroup.0b4f4937.combine_file__m8abag3k",
+        "agronholm__exceptiongroup.0b4f4937.combine_file__bld28s29",
+        "agronholm__exceptiongroup.0b4f4937.combine_file__5f69j6zc",
+        "agronholm__exceptiongroup.0b4f4937.combine_file__74zzufuj",
+        "bottlepy__bottle.a8dfef30.lm_rewrite__lipuhwjq",
+        "bottlepy__bottle.a8dfef30.lm_rewrite__jl6cwx43",
+        "bottlepy__bottle.a8dfef30.lm_rewrite__kp42sqj8",
+        "bottlepy__bottle.a8dfef30.lm_rewrite__tmiyzzg4",
+        "bottlepy__bottle.a8dfef30.lm_rewrite__xf5c01q7",
+        "oauthlib__oauthlib.1fd52536.combine_file__7nloo8og",
+        "oauthlib__oauthlib.1fd52536.combine_file__1bsv3m8l",
+        "oauthlib__oauthlib.1fd52536.combine_file__1o3hm5l5",
+        "oauthlib__oauthlib.1fd52536.combine_file__6za0pzef",
+        "oauthlib__oauthlib.1fd52536.combine_file__3robnlss",
+        "facelessuser__soupsieve.a8080d97.lm_rewrite__wu1jkbpa",
+        "facelessuser__soupsieve.a8080d97.lm_rewrite__zhgi9ftk",
+        "facelessuser__soupsieve.a8080d97.lm_rewrite__x9x4w9dq",
+        "facelessuser__soupsieve.a8080d97.lm_rewrite__zcpw35p9",
+        "facelessuser__soupsieve.a8080d97.lm_rewrite__vuz2oy16",
+        "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__5liurb5h",
+        "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__9yvdfppq",
+        "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__awkihszf",
+        "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__bfkhxf70",
+        "tobymao__sqlglot.036601ba.func_pm_ctrl_invert_if__fjchgbq1",
+        "python-trio__trio.cfbbe2c1.func_basic__cmky5mlf",
+        "python-trio__trio.cfbbe2c1.func_basic__aiupb8w6",
+        "python-trio__trio.cfbbe2c1.func_basic__awxwvlrg",
+        "python-trio__trio.cfbbe2c1.func_basic__b2q14tcf",
+        "python-trio__trio.cfbbe2c1.func_basic__b5ppjuhd"
+      ]
+    }
+  },
+  "preflight": {
+    "mbppplus": "metadata_selected",
+    "humanevalplus": "metadata_selected",
+    "swesmith_py": {
+      "status": "partial",
+      "passed": [
+        "bottlepy__bottle.a8dfef30.lm_rewrite__lipuhwjq"
+      ],
+      "pending_instances": 29,
+      "note": "Bottle task reproduced on macOS with the project venv: bug patch failed the target test and reverse fix passed."
+    }
+  }
+}

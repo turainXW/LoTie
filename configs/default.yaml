@@ -1,0 +1,29 @@
+model: deepseek/deepseek-chat
+mode: plan
+sandbox: copy
+enable_web_tools: false
+download_dir: refs/open_source
+context:
+  enabled: true
+  max_files: 12
+  max_chars: 5000
+skills:
+  max_chars: 2500
+memory:
+  enabled: true
+  max_chars: 3000
+  storage: file
+  path: .codeagent/memory
+trajectory:
+  schema: openhands_compatible_v1
+  export:
+    sampled_filename: openhands_sampled.jsonl
+    sft_filename: openhands_sft_messages.jsonl
+    verifier_filename: openhands_verifier_records.jsonl
+  fields:
+    - instance_id
+    - run_id
+    - resolved
+    - messages
+    - tools
+    - test_result

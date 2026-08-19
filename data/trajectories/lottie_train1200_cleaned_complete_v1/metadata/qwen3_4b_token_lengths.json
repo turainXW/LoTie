@@ -1,0 +1,264 @@
+{
+  "format": "lottie_sft_token_length_report_v1",
+  "input": "<project_root>/outputs/training_packages/lottie_train1200_cleaned_complete_v1/data/sft_primary.jsonl",
+  "tokenizer": "<tmp>/qwen3_4b_tokenizer/tokenizer.json",
+  "tokenizer_class": "Qwen2Tokenizer",
+  "model_max_length": 131072,
+  "chat_template_applied": true,
+  "overall": {
+    "rows": 1069,
+    "total_tokens": 7582425,
+    "mean_tokens": 7093.01,
+    "min_tokens": 2780,
+    "p50_tokens": 3610,
+    "p75_tokens": 10555,
+    "p90_tokens": 15964,
+    "p95_tokens": 19364,
+    "p99_tokens": 27481,
+    "max_tokens": 44802,
+    "buckets": {
+      "1-4096": 653,
+      "16385-32768": 94,
+      "4097-8192": 85,
+      "8193-16384": 235,
+      ">32768": 2
+    }
+  },
+  "by_dataset": {
+    "humanevalplus": {
+      "rows": 305,
+      "total_tokens": 1164447,
+      "mean_tokens": 3817.86,
+      "min_tokens": 2949,
+      "p50_tokens": 3579,
+      "p75_tokens": 3883,
+      "p90_tokens": 4348,
+      "p95_tokens": 4670,
+      "p99_tokens": 6009,
+      "max_tokens": 22902,
+      "buckets": {
+        "1-4096": 250,
+        "16385-32768": 1,
+        "4097-8192": 52,
+        "8193-16384": 2
+      }
+    },
+    "mbppplus": {
+      "rows": 411,
+      "total_tokens": 1360740,
+      "mean_tokens": 3310.8,
+      "min_tokens": 2780,
+      "p50_tokens": 3210,
+      "p75_tokens": 3401,
+      "p90_tokens": 3613,
+      "p95_tokens": 3813,
+      "p99_tokens": 4287,
+      "max_tokens": 9858,
+      "buckets": {
+        "1-4096": 403,
+        "4097-8192": 6,
+        "8193-16384": 2
+      }
+    },
+    "swesmith_py": {
+      "rows": 353,
+      "total_tokens": 5057238,
+      "mean_tokens": 14326.45,
+      "min_tokens": 5497,
+      "p50_tokens": 13499,
+      "p75_tokens": 16736,
+      "p90_tokens": 20324,
+      "p95_tokens": 25293,
+      "p99_tokens": 32378,
+      "max_tokens": 44802,
+      "buckets": {
+        "16385-32768": 93,
+        "4097-8192": 27,
+        "8193-16384": 231,
+        ">32768": 2
+      }
+    }
+  },
+  "longest": [
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.func_pm_remove_loop__ny292fqp:sample_03",
+      "instance_id": "cknd__stackprinter.219fcc52.func_pm_remove_loop__ny292fqp",
+      "sample_index": 3,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 83,
+      "tokens": 44802
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.func_basic__aerukaes:sample_04",
+      "instance_id": "madzak__python-json-logger.5f85723f.func_basic__aerukaes",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 83,
+      "tokens": 33427
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.combine_file__q463g4fv:sample_04",
+      "instance_id": "madzak__python-json-logger.5f85723f.combine_file__q463g4fv",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 73,
+      "tokens": 32590
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.func_pm_ctrl_shuffle__ypab5aii:sample_04",
+      "instance_id": "madzak__python-json-logger.5f85723f.func_pm_ctrl_shuffle__ypab5aii",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 73,
+      "tokens": 32378
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.func_basic__aerukaes:sample_03",
+      "instance_id": "madzak__python-json-logger.5f85723f.func_basic__aerukaes",
+      "sample_index": 3,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 83,
+      "tokens": 32351
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.combine_file__q463g4fv:sample_01",
+      "instance_id": "madzak__python-json-logger.5f85723f.combine_file__q463g4fv",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 73,
+      "tokens": 32034
+    },
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.func_pm_remove_loop__ny292fqp:sample_01",
+      "instance_id": "cknd__stackprinter.219fcc52.func_pm_remove_loop__ny292fqp",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 67,
+      "tokens": 30512
+    },
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.combine_file__jnvikixw:sample_02",
+      "instance_id": "cknd__stackprinter.219fcc52.combine_file__jnvikixw",
+      "sample_index": 2,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 65,
+      "tokens": 30195
+    },
+    {
+      "trajectory_id": "swesmith_py:agronholm__typeguard.b6a7e438.func_pm_remove_loop__62p246wi:sample_04",
+      "instance_id": "agronholm__typeguard.b6a7e438.func_pm_remove_loop__62p246wi",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "A",
+      "messages": 79,
+      "tokens": 29574
+    },
+    {
+      "trajectory_id": "swesmith_py:jd__tenacity.0d40e76f.combine_file__x4ymm5x6:sample_01",
+      "instance_id": "jd__tenacity.0d40e76f.combine_file__x4ymm5x6",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 83,
+      "tokens": 28561
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.combine_file__q463g4fv:sample_02",
+      "instance_id": "madzak__python-json-logger.5f85723f.combine_file__q463g4fv",
+      "sample_index": 2,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 67,
+      "tokens": 27481
+    },
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.combine_file__jnvikixw:sample_03",
+      "instance_id": "cknd__stackprinter.219fcc52.combine_file__jnvikixw",
+      "sample_index": 3,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 65,
+      "tokens": 27473
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.combine_file__fjdw5yv1:sample_02",
+      "instance_id": "madzak__python-json-logger.5f85723f.combine_file__fjdw5yv1",
+      "sample_index": 2,
+      "dataset": "swesmith_py",
+      "quality_tier": "A",
+      "messages": 73,
+      "tokens": 27429
+    },
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.combine_file__jnvikixw:sample_04",
+      "instance_id": "cknd__stackprinter.219fcc52.combine_file__jnvikixw",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 65,
+      "tokens": 26979
+    },
+    {
+      "trajectory_id": "swesmith_py:madzak__python-json-logger.5f85723f.combine_file__fjdw5yv1:sample_01",
+      "instance_id": "madzak__python-json-logger.5f85723f.combine_file__fjdw5yv1",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 69,
+      "tokens": 26664
+    },
+    {
+      "trajectory_id": "swesmith_py:cknd__stackprinter.219fcc52.func_pm_op_swap__4jorg4il:sample_01",
+      "instance_id": "cknd__stackprinter.219fcc52.func_pm_op_swap__4jorg4il",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 83,
+      "tokens": 26508
+    },
+    {
+      "trajectory_id": "swesmith_py:agronholm__typeguard.b6a7e438.func_pm_ctrl_shuffle__rw2zp0ga:sample_01",
+      "instance_id": "agronholm__typeguard.b6a7e438.func_pm_ctrl_shuffle__rw2zp0ga",
+      "sample_index": 1,
+      "dataset": "swesmith_py",
+      "quality_tier": "A",
+      "messages": 47,
+      "tokens": 26479
+    },
+    {
+      "trajectory_id": "swesmith_py:agronholm__typeguard.b6a7e438.func_pm_ctrl_shuffle__rw2zp0ga:sample_03",
+      "instance_id": "agronholm__typeguard.b6a7e438.func_pm_ctrl_shuffle__rw2zp0ga",
+      "sample_index": 3,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 47,
+      "tokens": 25293
+    },
+    {
+      "trajectory_id": "swesmith_py:agronholm__typeguard.b6a7e438.func_basic__44bm97i0:sample_04",
+      "instance_id": "agronholm__typeguard.b6a7e438.func_basic__44bm97i0",
+      "sample_index": 4,
+      "dataset": "swesmith_py",
+      "quality_tier": "A",
+      "messages": 59,
+      "tokens": 24896
+    },
+    {
+      "trajectory_id": "swesmith_py:jd__tenacity.0d40e76f.func_pm_ctrl_invert_if__tv8qotg5:sample_02",
+      "instance_id": "jd__tenacity.0d40e76f.func_pm_ctrl_invert_if__tv8qotg5",
+      "sample_index": 2,
+      "dataset": "swesmith_py",
+      "quality_tier": "S",
+      "messages": 59,
+      "tokens": 23945
+    }
+  ]
+}

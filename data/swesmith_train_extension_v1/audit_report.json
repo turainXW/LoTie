@@ -1,0 +1,372 @@
+{
+  "format": "lottie_swesmith_train_extension_audit_v1",
+  "status": "passed",
+  "checks": {
+    "task_count_100": true,
+    "runnable_count_100": true,
+    "unique_instances": true,
+    "runnable_matches_tasks": true,
+    "repo_count_20": true,
+    "five_tasks_per_repo": true,
+    "repository_disjoint": true,
+    "instance_disjoint": true,
+    "setup_all_ready": true,
+    "gold_all_passed": true,
+    "train_only": true
+  },
+  "counts": {
+    "tasks": 100,
+    "runnable": 100,
+    "repositories": 20,
+    "setup_ready": 20,
+    "gold_sanity_passed": 100,
+    "old_repository_overlap": 0,
+    "old_instance_overlap": 0
+  },
+  "distributions": {
+    "mutation_kind": {
+      "combine_file": 12,
+      "func_basic": 14,
+      "func_pm_class_rm_base": 2,
+      "func_pm_class_rm_funcs": 5,
+      "func_pm_ctrl_invert_if": 8,
+      "func_pm_ctrl_shuffle": 10,
+      "func_pm_op_change": 2,
+      "func_pm_op_change_const": 1,
+      "func_pm_op_swap": 3,
+      "func_pm_remove_assign": 9,
+      "func_pm_remove_cond": 6,
+      "func_pm_remove_loop": 4,
+      "func_pm_remove_wrapper": 3,
+      "lm_rewrite": 14,
+      "pr_181": 1,
+      "pr_229": 1,
+      "pr_282": 1,
+      "pr_363": 1,
+      "pr_418": 1,
+      "pr_456": 1,
+      "pr_469": 1
+    },
+    "changed_lines": {
+      "min": 2,
+      "median": 8.0,
+      "mean": 10.33,
+      "p90": 23,
+      "max": 30
+    },
+    "fail_to_pass_tests": {
+      "min": 1,
+      "median": 3.0,
+      "mean": 4.26,
+      "p90": 10,
+      "max": 19
+    },
+    "pass_to_pass_tests": {
+      "min": 1,
+      "median": 77.0,
+      "mean": 219.24,
+      "p90": 269,
+      "max": 2102
+    },
+    "problem_statement_chars": {
+      "min": 506,
+      "median": 1216.5,
+      "mean": 1220.63,
+      "p90": 1620,
+      "max": 2225
+    },
+    "gold_sanity_elapsed_sec": {
+      "min": 0.654,
+      "median": 1.5379999999999998,
+      "mean": 2.377,
+      "p90": 4.104,
+      "max": 21.95
+    }
+  },
+  "per_repository": {
+    "swesmith/Mimino666__langdetect.a1598f1a": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_basic": 1,
+        "func_pm_class_rm_funcs": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_cond": 1
+      }
+    },
+    "swesmith/aio-libs__async-timeout.d0baa9f1": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 2,
+        "lm_rewrite": 2
+      }
+    },
+    "swesmith/borntyping__python-colorlog.dfa10f59": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_class_rm_base": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/buriy__python-readability.40256f40": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_cond": 1,
+        "func_pm_remove_loop": 1
+      }
+    },
+    "swesmith/chardet__chardet.9630f238": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_op_change": 1,
+        "func_pm_remove_assign": 1
+      }
+    },
+    "swesmith/cloudpipe__cloudpickle.6220b0ce": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_basic": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_op_swap": 1,
+        "func_pm_remove_cond": 1,
+        "func_pm_remove_wrapper": 1
+      }
+    },
+    "swesmith/cool-RR__PySnooper.57472b46": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_op_change_const": 1,
+        "lm_rewrite": 2
+      }
+    },
+    "swesmith/erikrose__parsimonious.0d3f5f93": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_class_rm_funcs": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/google__textfsm.c31b6007": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_pm_class_rm_base": 1,
+        "func_pm_class_rm_funcs": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_assign": 1
+      }
+    },
+    "swesmith/hukkin__tomli.443a0c1b": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_wrapper": 1,
+        "pr_229": 1
+      }
+    },
+    "swesmith/jaraco__inflect.c079a96a": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_basic": 1,
+        "func_pm_op_change": 1,
+        "func_pm_op_swap": 1,
+        "func_pm_remove_wrapper": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/joke2k__faker.8b401a7d": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_cond": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/martinblech__xmltodict.0952f382": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_remove_assign": 1,
+        "lm_rewrite": 1,
+        "pr_363": 1
+      }
+    },
+    "swesmith/matthewwithanm__python-markdownify.6258f5c3": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_cond": 1,
+        "lm_rewrite": 1,
+        "pr_181": 1
+      }
+    },
+    "swesmith/pallets__markupsafe.620c06c9": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "lm_rewrite": 1,
+        "pr_418": 1,
+        "pr_469": 1
+      }
+    },
+    "swesmith/pwaller__pyfiglet.f8c5f35b": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_op_swap": 1
+      }
+    },
+    "swesmith/r1chardj0n3s__parse.30da9e4f": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_pm_ctrl_invert_if": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_loop": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/rubik__radon.54b88e58": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_basic": 1,
+        "func_pm_class_rm_funcs": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "lm_rewrite": 1
+      }
+    },
+    "swesmith/theskumar__python-dotenv.2b8635b7": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "combine_file": 1,
+        "func_pm_remove_assign": 1,
+        "func_pm_remove_loop": 1,
+        "lm_rewrite": 1,
+        "pr_456": 1
+      }
+    },
+    "swesmith/tkrajina__gpxpy.09fc46b3": {
+      "tasks": 5,
+      "mutation_kinds": {
+        "func_pm_class_rm_funcs": 1,
+        "func_pm_ctrl_shuffle": 1,
+        "func_pm_remove_cond": 1,
+        "func_pm_remove_loop": 1,
+        "pr_282": 1
+      }
+    }
+  },
+  "dataset": {
+    "name": "SWE-bench/SWE-smith-py",
+    "revision": "77cab9055d42ab4a5c25c89a8f937096db13558e"
+  },
+  "source_files": [
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00000-of-00011.parquet",
+      "sha256": "302a383bb9229c42063ff2364b2ea637e9e7a20d82e0d566614d3aba9234833d",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00001-of-00011.parquet",
+      "sha256": "f15e5b8ab49866e93245a736056fab680d6dde8fb5c2ba89c06241cf12a32afe",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00002-of-00011.parquet",
+      "sha256": "67512898124c03132ae5bbf78866610571a565724dcb6a2064009db8a6825613",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00003-of-00011.parquet",
+      "sha256": "cc4c9812480faac2bc2de49e78a271d17cc8dcd89a8af2268246c3c8632fd27d",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00004-of-00011.parquet",
+      "sha256": "6110c76e568c0ee03eb1c86d208887154c6406237f532436cf72ed2c265073ca",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00005-of-00011.parquet",
+      "sha256": "517420b48132eda3c073e6b9bc5fecbaf34c3dea7f3fec49a46f8615584f8200",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00006-of-00011.parquet",
+      "sha256": "8e55de0daa541c031779f17d6ef04ebc3a4e2caad708d3137edb4587d89e60f3",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00007-of-00011.parquet",
+      "sha256": "c558fc3b6507f36ae520a8b23ac0cd71be7d7c8bb15c0b09060fe18d83d21045",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00008-of-00011.parquet",
+      "sha256": "b861958c450293ee717c00659958d2f334a697edf804f33c10c75bd05b8787e7",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00009-of-00011.parquet",
+      "sha256": "20923272dab2706c1e07e9e11a19373c5c642efbb594a3b1c104440cf8cfc132",
+      "rows": 4628
+    },
+    {
+      "path": "<tmp>/lottie_swesmith_py_77cab90/data/train-00010-of-00011.parquet",
+      "sha256": "3b7c09dfa07209f550f210344caac267c2ac5ea9c6eefa84c67845ecdff0b6df",
+      "rows": 4628
+    }
+  ],
+  "artifacts": {
+    "selection": {
+      "path": "<project_root>/data/swesmith_train_extension_v1/selection.json",
+      "sha256": "d913083e8bdfd100cfe4d3a1c521a0b26ad90c8d5ddc617428c7ada98df422a3"
+    },
+    "existing_selection": {
+      "path": "<project_root>/data/dataset_splits_v1/selection.json",
+      "sha256": "af474aa001eeb2ba682ef6ab408a6e656d9ff35a52697f5edd4e9b6d52025b73"
+    },
+    "tasks": {
+      "path": "<project_root>/data/swesmith_train_extension_v1/tasks.jsonl",
+      "sha256": "58d894bdc5049a0bb8774d82001d93a377ed0a04bd85b3db9f6248515a822a97"
+    },
+    "setup_results": {
+      "path": "<project_root>/data/swesmith_train_extension_v1/setup_results.jsonl",
+      "sha256": "98828c41fe5ba8c08d761d0349dcf6e7880a16cffda1c458f602ca3a7e9a623d"
+    },
+    "sanity_results": {
+      "path": "<project_root>/data/swesmith_train_extension_v1/gold_sanity.jsonl",
+      "sha256": "a691668381ee8c599e551cdb2d8c958821347443c2fd5722e85aaf7975373e8b"
+    },
+    "runnable": {
+      "path": "<project_root>/data/swesmith_train_extension_v1/tasks_runnable.jsonl",
+      "sha256": "58d894bdc5049a0bb8774d82001d93a377ed0a04bd85b3db9f6248515a822a97"
+    }
+  }
+}

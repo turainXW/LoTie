@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codeagent-rl"
+version = "0.1.0"
+description = "miniCoder: a trainable coding-agent harness with modes, context, memory, sandboxing, and trajectory logging."
+readme = "README_zh.md"
+requires-python = ">=3.10"
+dependencies = [
+  "httpx>=0.27",
+  "mini-swe-agent>=2.4.1",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+]
+analysis = [
+  "Pillow>=10.0",
+]
+swegym = [
+  "datasets>=2.20",
+  "huggingface-hub>=0.23",
+  "pandas>=2.2",
+  "pyarrow>=16.0",
+  "tqdm>=4.66",
+]
+local-llm = [
+  "accelerate>=0.33",
+  "safetensors>=0.4",
+  "transformers>=4.54",
+]
+full = [
+  "codeagent-rl[analysis,dev,swegym,local-llm]",
+]
+
+[project.scripts]
+codeagent = "code_agent_baseline.cli:main"
+minicoder = "code_agent_baseline.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]

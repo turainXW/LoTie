@@ -1,0 +1,52 @@
+{
+  "format": "lottie_salvage_sft_manifest_v1",
+  "created_at": "2026-08-15T07:43:20.330082+00:00",
+  "source_run": "<project_root>/outputs/training_runs/deepseek_v4_flash_train300_rollout4_v1",
+  "snapshot_id": "06dfc197dd9621cc56bf52bf2cafa0bbe9eb0a060cd2e5bf5bcbb7deac6b5471",
+  "source_valid_rollouts_at_snapshot": 1200,
+  "candidate_trajectories": 94,
+  "recovered_trajectories": 90,
+  "manual_review_trajectories": 4,
+  "removed_invalid_parser_pairs": 129,
+  "removed_premature_finish_pairs": 2,
+  "removed_protocol_rejection_pairs": 6,
+  "finish_appended": 11,
+  "secret_redactions": 0,
+  "action_counts": {
+    "drop_invalid_assistant_and_parser_feedback": 133,
+    "drop_premature_finish_and_gate_rejection": 2,
+    "drop_rejected_protocol_call_and_feedback": 6
+  },
+  "error_categories": {
+    "invalid_control_character": 4,
+    "invalid_escape": 26,
+    "invalid_json": 1,
+    "missing_delimiter": 19,
+    "non_json_text": 70,
+    "unterminated_string": 13
+  },
+  "isolation_policy": {
+    "source_run_modified": false,
+    "backup_completed_before_cleaning": true,
+    "raw_backup_is_byte_exact": true,
+    "raw_backup_reused": false,
+    "workspace_directories_in_backup": false,
+    "source_metadata_preserved_in_raw_backup": true,
+    "derived_metadata_stored_separately": true
+  },
+  "repair_policy": {
+    "automatic_rule": "Drop only an invalid assistant message immediately followed by a parser rejection; or a premature finish immediately followed by completion-gate rejection. Also drop a schema-invalid/unknown tool call immediately followed by an explicit runtime protocol rejection. Both pairs have no environment side effect.",
+    "tool_calls_reconstructed_by_guessing": false,
+    "unproven_cases": "manual_review",
+    "all_remaining_assistant_messages": "canonical JSON tool calls",
+    "resolved_without_finish": "append canonical finish after the final observation"
+  },
+  "outputs": {
+    "salvage_sft": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/sft_salvage.jsonl",
+    "repair_audit": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/repair_audit.jsonl",
+    "manual_review": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/manual_review.jsonl",
+    "raw_backup": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/raw_backup",
+    "backup_file_manifest": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/raw_backup/file_manifest.jsonl",
+    "backup_candidate_index": "<project_root>/outputs/training_datasets/lottie_train1200_salvage_v1/raw_backup/candidate_index.jsonl"
+  }
+}
