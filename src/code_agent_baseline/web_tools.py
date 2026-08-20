@@ -71,7 +71,7 @@ def download_repo(repo_url: str, download_dir: str | Path, dest_name: str | None
 def _github_repo_search(query: str, max_results: int) -> dict[str, Any]:
     params = urllib.parse.urlencode({"q": query, "per_page": str(max_results)})
     url = f"https://api.github.com/search/repositories?{params}"
-    request = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "codeagent-rl"})
+    request = urllib.request.Request(url, headers={"Accept": "application/vnd.github+json", "User-Agent": "lotie-code-agent"})
     token = os.environ.get("GITHUB_TOKEN")
     if token:
         request.add_header("Authorization", f"Bearer {token}")
@@ -115,7 +115,7 @@ def _bocha_search(query: str, max_results: int) -> dict[str, Any]:
         headers={
             "Content-Type": "application/json",
             "Authorization": f"Bearer {os.environ['BOCHA_API_KEY']}",
-            "User-Agent": "codeagent-rl",
+            "User-Agent": "lotie-code-agent",
         },
     )
     try:
@@ -174,7 +174,7 @@ def _brave_search(query: str, max_results: int) -> dict[str, Any]:
         headers={
             "Accept": "application/json",
             "X-Subscription-Token": os.environ["BRAVE_SEARCH_API_KEY"],
-            "User-Agent": "codeagent-rl",
+            "User-Agent": "lotie-code-agent",
         },
     )
     data = _urlopen_json_with_retries(request, timeout=30)

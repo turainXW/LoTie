@@ -1,71 +1,193 @@
-# Open-source code agent quickstart survey
+# LoTie
 
-Date: 2026-06-14
+LoTie (pronounced **LOH-tee**, approximately "洛蒂") is a compact code-agent
+runtime and data pipeline for repository repair, trajectory collection,
+assistant-only SFT preparation, and verifier-driven Pass@k evaluation.
 
-This note surveys open-source coding agents that can be adapted quickly as a
-local baseline for `agentrl`. The main target is not an IDE product; it is a
-small, inspectable agent loop that can produce trajectories for later SFT/RL.
+[中文说明](README_zh.md) | [Full project report (Chinese)](reports/Lottie_Code_Agent_FULL_PROJECT_REPORT_ZH.md)
 
-## Short answer
+## What is included
 
-Use `mini-swe-agent` first.
+- A JSON tool-calling agent loop for shell execution, structured editing,
+  repository context, testing, patch generation, and resumable runs.
+- Deterministic train/validation/evaluation splits over MBPP+, HumanEval+, and
+  SWE-smith, with hidden gold data kept out of agent prompts.
+- Concurrent and resumable rollout collection with infrastructure retry
+  accounting and model/verifier failure separation.
+- Auditable Strict, Salvage, and Quarantine trajectory partitions.
+- Qwen chat-template conversion, assistant-only loss masks, and 4K-32K
+  length-bucketed LoRA SFT utilities.
+- EvalPlus and SWE-smith verification plus Pass@1, Pass@2, and Pass@3 reports.
 
-Why:
+## Pipeline
 
-- It is intentionally minimal: the README describes the core agent class as
-  roughly 100 lines of Python.
-- Its only real action interface is bash, so the environment and trajectory are
-  easy to instrument.
-- It has a linear message/action history, which is convenient for debugging,
-  converting to JSONL, and later fine-tuning.
-- It supports local environments and sandbox backends such as Docker/Podman.
-- It is MIT licensed and installable from PyPI.
+```text
+task split
+   -> isolated repository / function sandbox
+   -> agent tool loop
+   -> patch + tests + verifier result
+   -> raw trajectory and rollout metadata
+   -> Strict / Salvage / Quarantine audit
+   -> target-tokenizer conversion and assistant-only mask
+   -> length-bucketed SFT
+   -> versioned Pass@k evaluation
+```
 
-Repository:
-https://github.com/SWE-agent/mini-swe-agent
+The repository intentionally excludes model weights, raw task workspaces,
+virtual environments, API credentials, and private SSH configuration.
 
-Docs:
-https://mini-swe-agent.com
+## Quick start
 
-## Candidate comparison
+Requirements: macOS or Linux, Python 3.10+, Git, and a model endpoint compatible
+with the OpenAI chat-completions API.
 
-| Candidate | Best fit | License | Setup friction | Fit for this repo |
-| --- | --- | --- | --- | --- |
-| `mini-swe-agent` | Minimal local code agent and trajectory baseline | MIT | Low | Best first choice |
-| `SWE-agent` | SWE-bench style issue repair with configurable tools/history | MIT | Medium | Good second choice if custom tool interfaces matter |
-| `OpenHands` | Full software-agent platform with SDK, CLI, GUI, sandboxing | MIT core, enterprise folder separate | Medium-high | Useful reference, heavier than needed for first baseline |
-| `aider` | Terminal pair-programming assistant | Apache-2.0 | Low | Good user-facing tool, less ideal for autonomous RL trajectory collection |
-| `AutoCodeRover` | Structure-aware GitHub issue repair/SWE-bench workflows | Source-available, not a clean OSS baseline | Medium-high, Docker oriented | Useful reference, but avoid as first reusable baseline |
-| `opencode`, `Cline`, `Roo Code` | CLI/editor coding products | MIT or Apache-2.0 depending on project | Low-medium | Useful UX references, not the cleanest research baseline |
+```bash
+git clone git@github.com:turainXW/LoTie.git
+cd LoTie
 
-## Recommendation
+# Minimal editable install. Use the default with no argument for dev + SWE tools.
+bash scripts/install_dev.sh base
+source scripts/dev_env.sh
 
-Start with `mini-swe-agent` as a separate baseline module:
+lotie --help
+python3 scripts/run_smoke.py --output-dir data/code_agent_smoke
+```
 
-1. Clone or vendor a minimal subset under `refs/mini-swe-agent` or keep it as an
-   external dependency.
-2. Run a 3-task smoke test on tiny local coding tasks.
-3. Add a thin trajectory logger that writes one JSONL object per episode.
-4. Convert successful and failed trajectories into the same style as existing
-   agent/tool datasets in this repo.
-5. Only move to `SWE-agent` or `OpenHands` if we need richer tool interfaces,
-   browser/GUI interaction, or official SWE-bench harness support.
+The installer creates `.venv`, installs the package, initializes local agent
+state under `.codeagent/`, and copies `.env.example` to `.env`. Secrets in
+`.env` are ignored by Git.
 
-## Why not start with a full platform
+### Run a one-shot repository task
 
-OpenHands is strong and actively maintained, but it brings a full platform
-surface: SDK, CLI, GUI, REST API, Docker images, and enterprise/cloud pieces.
-That is useful later, but for a first local experiment it increases the number
-of moving parts. The repo here already has custom data pipelines and evaluation
-scripts, so a small agent loop is easier to instrument.
+```bash
+lotie use \
+  --repo /path/to/target-repository \
+  --task "Fix the failing parser test and verify the smallest patch" \
+  --sandbox copy \
+  --model-url http://127.0.0.1:8000/v1 \
+  --model local-model \
+  --max-steps 40 \
+  --show-steps
+```
 
-## Sources checked
+`--sandbox copy` is the safe default: the agent edits an isolated copy instead
+of the source repository. Use `--sandbox direct` only when in-place changes are
+intentional.
 
-- `mini-swe-agent`: https://github.com/SWE-agent/mini-swe-agent
-- `SWE-agent`: https://github.com/SWE-agent/SWE-agent
-- `OpenHands`: https://github.com/OpenHands/OpenHands
-- `aider`: https://github.com/Aider-AI/aider
-- `AutoCodeRover`: https://github.com/AutoCodeRoverSG/auto-code-rover
-- `opencode`: https://github.com/anomalyco/opencode
-- `Cline`: https://github.com/cline/cline
-- `Roo Code`: https://github.com/RooCodeInc/Roo-Code
+The preferred CLI is `lotie`. The historical `minicoder` and `codeagent`
+entrypoints remain available for compatibility.
+
+## Trajectory collection and evaluation
+
+Plan a versioned multi-rollout experiment without executing it:
+
+```bash
+lotie pass-at-k \
+  --selection data/dataset_splits_v1/selection.json \
+  --split evaluation \
+  --samples 3 \
+  --workers 4 \
+  --output-dir outputs/eval90_pass3 \
+  --plan-only
+```
+
+Run `lotie pass-at-k --help` before a formal collection. The command records
+the model endpoint, sampling parameters, task split, worker policy, verifier
+timeouts, and valid sample slots so interrupted runs can resume without
+overwriting completed results.
+
+For local SWE-smith setup and macOS collection, see:
+
+- [Portable macOS trajectory collection](docs/MACOS_PORTABLE_TRAJECTORY_COLLECTION_ZH.md)
+- [Eval90 deployment](DEPLOY_EVAL90_zh.md)
+- [General deployment notes](DEPLOY_zh.md)
+
+## Included training data
+
+The sanitized delivery under
+`data/trajectories/lottie_train1200_cleaned_complete_v1/` contains:
+
+| Artifact | Rows | Intended use |
+| --- | ---: | --- |
+| Raw valid rollouts | 1,200 | RL/reward analysis, including real model failures |
+| Verifier-resolved rollouts | 1,090 | Successful behavior analysis |
+| Strict SFT trajectories | 996 | Highest-confidence SFT source |
+| Primary SFT trajectories | 1,069 | Strict + independently audited Tier-A salvage |
+| Optional Tier-B trajectories | 13 | Lower-weight optional experiments |
+
+Compressed data files are accompanied by manifests, SHA-256 provenance,
+exclusion records, and per-trajectory repair audits. They are intentionally not
+pre-tokenized: use the exact tokenizer and chat template of the target model.
+
+```bash
+python3 tools/prepare_qwen_sft_dataset.py --help
+python3 tools/audit_qwen_sft_arrow.py --help
+python3 scripts/train_qwen_lottie_lora.py --help
+```
+
+The training utilities supervise only valid assistant turns. System prompts,
+user messages, tool observations, malformed protocol output, padding, and
+overlapping history from long-window splits are masked from loss.
+
+## Reference evaluation
+
+The checked-in report uses one harness and sampling policy for 90 evaluation
+tasks with three rollouts per task. The best Qwen3-4B LoRA checkpoint in that
+run was Epoch 3.
+
+| Model | Overall P@1 | Overall P@2 | Overall P@3 | SWE-smith P@1 | SWE-smith P@2 | SWE-smith P@3 |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: |
+| Qwen3-4B base | 52.59% | 62.59% | 66.67% | 18.89% | 26.67% | 30.00% |
+| LoTie Epoch 3 | 60.74% | 68.52% | 72.22% | 27.78% | 37.78% | 43.33% |
+
+See [evaluation methodology and charts](reports/qwen_v3_eval_20260816/README.md).
+SWE-smith local-venv results are marked `official_comparable=false`; use the
+official containerized verifier for leaderboard-comparable claims.
+
+## Repository layout
+
+```text
+LoTie/
+├── src/code_agent_baseline/   # Agent loop, tools, context, model clients, CLI
+├── scripts/                   # Collection, evaluation, deployment, and training
+├── tools/                     # Cleaning, auditing, tokenization, and packaging
+├── benchmarks/                # Unit and integration tests
+├── configs/                   # Runtime defaults
+├── data/
+│   ├── dataset_splits_v1/     # Deterministic train/validation/eval selection
+│   ├── evalplus_local/        # Sanitized function-task inputs
+│   ├── swesmith_local/        # Sanitized repository-task inputs
+│   └── trajectories/          # Compressed cleaned trajectory delivery
+├── reports/                   # Training/evaluation metrics, plots, and analysis
+├── docs/                      # Operational and portability documentation
+├── requirements-*.txt         # Reproducible dependency profiles
+└── pyproject.toml             # Package metadata and CLI entrypoints
+```
+
+Generated `outputs/`, `dist/`, `.venv/`, `.codeagent/`, logs, and local
+workspaces are ignored.
+
+## Verification
+
+```bash
+source scripts/dev_env.sh
+PYTHONPATH=src:benchmarks/leetcode_top10 \
+  python -m unittest discover -s benchmarks -p 'test_*.py'
+```
+
+Verifier outcomes are kept separate from agent execution status. Test failure,
+`no_edit`, `max_steps`, and parse failure remain real model outcomes; only
+explicit API, process, OOM, or verifier infrastructure failures are eligible
+for infrastructure retry.
+
+## Data and license notes
+
+- Gold patches, canonical solutions, and hidden tests are not exposed in agent
+  prompts.
+- Dataset records retain upstream identifiers and should be used under their
+  respective upstream terms.
+- This repository currently ships without a general software license. Public
+  visibility does not by itself grant redistribution or modification rights.
+
+Before making a release archive, follow
+[the open-source checklist](OPEN_SOURCE_CHECKLIST_zh.md).

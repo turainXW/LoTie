@@ -50,10 +50,10 @@ def main() -> None:
 
 
 def _print_help(script_by_command: dict[str, Path]) -> None:
-    parser = argparse.ArgumentParser(prog="minicoder")
+    parser = argparse.ArgumentParser(prog="lotie")
     parser.description = (
-        "miniCoder developer CLI. "
-        "Shortcut: `minicoder \"your task\"` runs the default use-mode agent."
+        "LoTie code-agent and trajectory pipeline CLI. "
+        "Shortcut: `lotie \"your task\"` runs the default use-mode agent."
     )
     parser.add_argument("command", choices=sorted(script_by_command))
     parser.add_argument("args", nargs=argparse.REMAINDER)

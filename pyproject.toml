@@ -3,10 +3,10 @@ requires = ["setuptools>=68", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "codeagent-rl"
+name = "lotie-code-agent"
 version = "0.1.0"
-description = "miniCoder: a trainable coding-agent harness with modes, context, memory, sandboxing, and trajectory logging."
-readme = "README_zh.md"
+description = "LoTie: a code-agent runtime and data pipeline for trajectory collection, SFT, and verifier-driven evaluation."
+readme = "README.md"
 requires-python = ">=3.10"
 dependencies = [
   "httpx>=0.27",
@@ -33,10 +33,11 @@ local-llm = [
   "transformers>=4.54",
 ]
 full = [
-  "codeagent-rl[analysis,dev,swegym,local-llm]",
+  "lotie-code-agent[analysis,dev,swegym,local-llm]",
 ]
 
 [project.scripts]
+lotie = "code_agent_baseline.cli:main"
 codeagent = "code_agent_baseline.cli:main"
 minicoder = "code_agent_baseline.cli:main"
 

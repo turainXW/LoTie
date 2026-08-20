@@ -31,7 +31,8 @@ export MSWEA_SILENT_STARTUP="${MSWEA_SILENT_STARTUP:-1}"
 
 mkdir -p "$MSWEA_GLOBAL_CONFIG_DIR"
 
-echo "miniCoder dev env active"
+echo "LoTie dev env active"
 echo "python=$(command -v python)"
+echo "lotie=$(command -v lotie)"
 echo "minicoder=$(command -v minicoder)"
 echo "codeagent=$(command -v codeagent) (legacy alias)"

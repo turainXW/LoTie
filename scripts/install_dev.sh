@@ -28,7 +28,7 @@ if command -v chflags >/dev/null 2>&1; then
 fi
 
 python -c 'import code_agent_baseline'
-minicoder --help >/dev/null
+lotie --help >/dev/null
 
 mkdir -p .codeagent/memory
 codeagent repo-map --repo . --task "initialize repository context" >/dev/null
@@ -39,9 +39,9 @@ if [ ! -f .env ]; then
   cp .env.example .env
 fi
 
-echo "Installed miniCoder development environment."
+echo "Installed LoTie development environment."
 echo "Virtual environment: $PWD/$VENV_DIR"
 echo "Installed extras: $EXTRAS"
 echo "Next: edit .env, then run: source $VENV_DIR/bin/activate"
-echo "CLI: minicoder --help (legacy alias: codeagent --help)"
+echo "CLI: lotie --help (compatibility aliases: minicoder, codeagent)"
 echo "Smoke test: PYTHONPATH=src:benchmarks/leetcode_top10 python -m unittest discover -s benchmarks -p 'test_*.py'"
