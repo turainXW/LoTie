@@ -1,5 +1,5 @@
 68d7d375c7214df340986263f47174f169a7fd39ca9c5c9e85132b61e5e4d629  ./.env.example
-cd9c799de87ae94ded85a53876493bef7cae97819b5ee20e4b1ff67a13ac8227  ./.gitignore
+77f6a6c1878a5253476d470f25b1a779ead757128a32e130f4600d2744cabfcc  ./.gitignore
 3ed731b65d06150c138e2dadb0be0697550888a6b47eb8c45ecc9adba8b8e9bd  ./.pytest_cache/.gitignore
 37dc88ef9a0abeddbe81053a6dd8fdfb13afb613045ea1eb4a5c815a74a3bde4  ./.pytest_cache/CACHEDIR.TAG
 73fd6fccdd802c419a6b2d983d6c3173b7da97558ac4b589edec2dfe443db9ad  ./.pytest_cache/README.md
@@ -298,6 +298,12 @@ e6b5194b0048ac2bc4e4879418860b0f4fff4e0dd8d62e6aff873368dbccf743  ./src/code_age
 d472862b6b47d372e054772855753c04e8c17e74e39c6e7bf3f6305ae628236d  ./src/code_agent_baseline/web_tools.py
 be9bdeade482d737493b9e69d073c16c8b237c5e9375fedf7838ccbdd01378ee  ./src/code_agent_baseline/working_memory.py
 eda31179bd3d66d1b1484bf523a1238a41e13d4bcd3e75b71ddb8e4b51d02782  ./src/code_agent_baseline/workspace_sandbox.py
+8ffc20ab7e9ee9e64312638d5a43c83f8a26b7f6fd25336337576bdfc4fc4760  ./src/lotie_code_agent.egg-info/PKG-INFO
+40e76d45e2c9d5029870030104c2e19713cde7038ae05fde81446652b611236f  ./src/lotie_code_agent.egg-info/SOURCES.txt
+01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b  ./src/lotie_code_agent.egg-info/dependency_links.txt
+e88b3e7589f8efac2316c28a32085aa9ab473679754e360fd8c50baa71d02e1d  ./src/lotie_code_agent.egg-info/entry_points.txt
+ede49ba33ad2e4390026749fcb7e1d5cbdd51f5ea015ef93dc21f4db49ad2cd2  ./src/lotie_code_agent.egg-info/requires.txt
+42ba3f84d0aa489f18f9024cf07eb93fd5a085521c5b8037ef4fd8977ae6dc4b  ./src/lotie_code_agent.egg-info/top_level.txt
 636009ac096f5a20679d0495352a6fc1b05ae36079a88df7c1707185f8ed3a72  ./tools/__pycache__/build_salvage_sft_dataset.cpython-312.pyc
 4ddf0324e7a04dc72680b37002677215038231304b6f8588822b28153f1e72c3  ./tools/analyze_sft_token_lengths.py
 0b19e588364cce22862f83e4df7f39f65c86e3c8903acd4f9ffeefb009b94e88  ./tools/audit_qwen_sft_arrow.py
