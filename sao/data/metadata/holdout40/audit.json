@@ -1,0 +1,12 @@
+{
+  "all_have_action_tokens": true,
+  "max_allowed_tokens": 65536,
+  "max_observed_tokens": 64811,
+  "records": 398,
+  "token_mask_length_equal": true,
+  "train_validation_group_overlap": false,
+  "trajectory_source_hashes_present": true,
+  "unique_slots": 398,
+  "verifier_source_hashes_present": true,
+  "whole_vs_message_tokenization_equal": true
+}

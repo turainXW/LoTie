@@ -1,0 +1,16 @@
+{
+  "batch_profile": "critic_96gb_verified",
+  "epochs": 1,
+  "files": {
+    "critic_adapter": "critic_adapter",
+    "optimizer": "optimizer.pt",
+    "rng": "rng_state.pt",
+    "scheduler": "scheduler.pt",
+    "value_head": "value_head.safetensors"
+  },
+  "format": "lottie_sao_critic_checkpoint_v1",
+  "global_steps": 111,
+  "source_checkpoint": "/root/autodl-tmp/lottie_sft/runs/qwen3_4b_lottie_lora_maskv2_r32_e3to5_stage_v1/epoch_003_adapter",
+  "target_trajectories_per_update": 8,
+  "train_selection": "all"
+}

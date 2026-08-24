@@ -1,0 +1,164 @@
+{
+  "additional_sources": [
+    {
+      "dataset": "swesmith_py",
+      "path": "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_swesmith197_supplement_r3_t05_v1/swesmith_py/sample_results.jsonl"
+    }
+  ],
+  "all": {
+    "action_tokens": {
+      "max": 30447,
+      "min": 222,
+      "p50": 3144,
+      "p90": 7916,
+      "p95": 9806,
+      "total": 3652290
+    },
+    "datasets": {
+      "function": 200,
+      "swesmith": 788
+    },
+    "rewards": {
+      "0": 604,
+      "1": 384
+    },
+    "rows": 988,
+    "tokens": {
+      "max": 65044,
+      "min": 3107,
+      "p50": 21625,
+      "p90": 46335,
+      "p95": 56468,
+      "total": 22894483
+    }
+  },
+  "artifacts": {
+    "action_mask": "action_mask.npy",
+    "excluded_overlength": "excluded_overlength.jsonl",
+    "input_ids": "input_ids.npy",
+    "samples": "samples.jsonl"
+  },
+  "created_at_utc": "2026-08-24T06:32:46.185841+00:00",
+  "excluded_overlength": {
+    "action_tokens": {
+      "max": 1725,
+      "min": 1725,
+      "p50": 1725,
+      "p90": 1725,
+      "p95": 1725,
+      "total": 1725
+    },
+    "datasets": {
+      "swesmith": 1
+    },
+    "rewards": {
+      "0": 1
+    },
+    "rows": 1,
+    "tokens": {
+      "max": 69991,
+      "min": 69991,
+      "p50": 69991,
+      "p90": 69991,
+      "p95": 69991,
+      "total": 69991
+    }
+  },
+  "format": "lottie_sao_critic_terminal_return_v1",
+  "loss_mask": {
+    "assistant_action_tokens": 1,
+    "assistant_end_of_turn_tokens": 1,
+    "assistant_header_tokens": 0,
+    "system_user_tool_observation_tokens": 0
+  },
+  "max_seq_len": 65536,
+  "model_path": "/root/autodl-tmp/model_cache/Qwen/Qwen3-4B-Instruct-2507",
+  "no_eval_data": true,
+  "no_truncation": true,
+  "overlength_policy": "exclude",
+  "rollout_root": "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2",
+  "source_records": 989,
+  "source_sha256": {
+    "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_swesmith197_supplement_r3_t05_v1/swesmith_py/sample_results.jsonl": "7d260c72d75ef7ff5e6cc11c111df1c0e7a6578be46c166853c86f5492f20205",
+    "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2/function/sample_results.jsonl": "277f2e27ed795b8c3a7a9efc636d03f2486392c9f4ad897fd86cc38f4058af66",
+    "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2/swesmith_py/sample_results.jsonl": "705e421856bc642f1d5fe5d613d988173d96e9e964d1d30f37c09577fbd9cd20"
+  },
+  "split_group_counts": {
+    "train": {
+      "function": 180,
+      "swesmith": 21
+    },
+    "validation": {
+      "function": 20,
+      "swesmith": 4
+    }
+  },
+  "split_policy": {
+    "fixed_validation_samples": "/root/autodl-tmp/lottie_sao/data/critic_coldstart_ep3_train398_v3/samples.jsonl",
+    "function": "instance_id",
+    "swesmith": "repository_minimum_4_validation_repositories"
+  },
+  "split_seed": "lottie-sao-critic-v1",
+  "target": {
+    "gamma": 1.0,
+    "kind": "terminal_verifier_return",
+    "negative": "benchmark_resolved=false",
+    "positive": "benchmark_resolved=true"
+  },
+  "tokenizer_class": "Qwen2Tokenizer",
+  "train": {
+    "action_tokens": {
+      "max": 30447,
+      "min": 222,
+      "p50": 3144,
+      "p90": 7860,
+      "p95": 9407,
+      "total": 3257744
+    },
+    "datasets": {
+      "function": 180,
+      "swesmith": 708
+    },
+    "rewards": {
+      "0": 540,
+      "1": 348
+    },
+    "rows": 888,
+    "tokens": {
+      "max": 65044,
+      "min": 3107,
+      "p50": 21201,
+      "p90": 46277,
+      "p95": 56381,
+      "total": 20263457
+    }
+  },
+  "validation": {
+    "action_tokens": {
+      "max": 19276,
+      "min": 228,
+      "p50": 3047,
+      "p90": 8217,
+      "p95": 10728,
+      "total": 394546
+    },
+    "datasets": {
+      "function": 20,
+      "swesmith": 80
+    },
+    "rewards": {
+      "0": 64,
+      "1": 36
+    },
+    "rows": 100,
+    "tokens": {
+      "max": 63449,
+      "min": 3143,
+      "p50": 26809,
+      "p90": 49042,
+      "p95": 58483,
+      "total": 2631026
+    }
+  },
+  "validation_ratio_requested": 0.1
+}
