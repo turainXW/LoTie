@@ -1,0 +1,37 @@
+{
+  "actor": {
+    "base_model": "Qwen/Qwen3-4B-Instruct-2507",
+    "adapter": "epoch_003_adapter",
+    "initialize_value_head": "normal(mean=0,std=1e-3), bias=train_terminal_return_prior"
+  },
+  "data": {
+    "format": "lottie_sao_critic_terminal_return_v1",
+    "max_sequence_length": 65536,
+    "overlength_policy": "exclude",
+    "split_seed": "lottie-sao-critic-v1",
+    "training_rows": 888,
+    "target": "terminal_verifier_return",
+    "fixed_holdout_rows": 40
+  },
+  "optimization": {
+    "epochs": 1,
+    "optimizer_updates": 111,
+    "critic_mlp_lora_learning_rate": 0.000005,
+    "value_head_learning_rate": 0.00005,
+    "warmup_steps": 10,
+    "max_gradient_norm": 1.0,
+    "batch_profile": "critic_96gb_verified",
+    "target_trajectories_per_update": 8,
+    "periodic_checkpoint_interval": 0,
+    "seed": 20260823
+  },
+  "trainable_parameters": {
+    "attention_lora": false,
+    "mlp_lora_modules": ["gate_proj", "up_proj", "down_proj"],
+    "scalar_value_head": true
+  },
+  "precision": {
+    "forward": "bfloat16 autocast",
+    "value_head": "float32"
+  }
+}

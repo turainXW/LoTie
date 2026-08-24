@@ -1,0 +1,128 @@
+{
+  "all": {
+    "action_tokens": {
+      "max": 19276,
+      "min": 222,
+      "p50": 887,
+      "p90": 6512,
+      "p95": 8088,
+      "total": 1008343
+    },
+    "datasets": {
+      "function": 200,
+      "swesmith": 198
+    },
+    "rewards": {
+      "0": 185,
+      "1": 213
+    },
+    "rows": 398,
+    "tokens": {
+      "max": 64811,
+      "min": 3107,
+      "p50": 8818,
+      "p90": 39000,
+      "p95": 48565,
+      "total": 6350223
+    }
+  },
+  "artifacts": {
+    "action_mask": "action_mask.npy",
+    "input_ids": "input_ids.npy",
+    "samples": "samples.jsonl"
+  },
+  "created_at_utc": "2026-08-22T17:24:30.514570+00:00",
+  "format": "lottie_sao_critic_terminal_return_v1",
+  "loss_mask": {
+    "assistant_action_tokens": 1,
+    "assistant_end_of_turn_tokens": 1,
+    "assistant_header_tokens": 0,
+    "system_user_tool_observation_tokens": 0
+  },
+  "max_seq_len": 65536,
+  "model_path": "/root/autodl-tmp/model_cache/Qwen/Qwen3-4B-Instruct-2507",
+  "no_eval_data": true,
+  "no_truncation": true,
+  "rollout_root": "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2",
+  "source_sha256": {
+    "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2/function/sample_results.jsonl": "277f2e27ed795b8c3a7a9efc636d03f2486392c9f4ad897fd86cc38f4058af66",
+    "/root/autodl-tmp/lottie-agent-linux/outputs/sao_critic_coldstart_ep3_train400_r1_t05_v2/swesmith_py/sample_results.jsonl": "705e421856bc642f1d5fe5d613d988173d96e9e964d1d30f37c09577fbd9cd20"
+  },
+  "split_group_counts": {
+    "train": {
+      "function": 180,
+      "swesmith": 21
+    },
+    "validation": {
+      "function": 20,
+      "swesmith": 4
+    }
+  },
+  "split_policy": {
+    "function": "instance_id",
+    "swesmith": "repository_minimum_4_validation_repositories"
+  },
+  "split_seed": "lottie-sao-critic-v1",
+  "target": {
+    "gamma": 1.0,
+    "kind": "terminal_verifier_return",
+    "negative": "benchmark_resolved=false",
+    "positive": "benchmark_resolved=true"
+  },
+  "tokenizer_class": "Qwen2Tokenizer",
+  "train": {
+    "action_tokens": {
+      "max": 13095,
+      "min": 222,
+      "p50": 835,
+      "p90": 6512,
+      "p95": 7864,
+      "total": 881492
+    },
+    "datasets": {
+      "function": 180,
+      "swesmith": 178
+    },
+    "rewards": {
+      "0": 166,
+      "1": 192
+    },
+    "rows": 358,
+    "tokens": {
+      "max": 64811,
+      "min": 3107,
+      "p50": 8765,
+      "p90": 38317,
+      "p95": 46335,
+      "total": 5603551
+    }
+  },
+  "validation": {
+    "action_tokens": {
+      "max": 19276,
+      "min": 228,
+      "p50": 1620,
+      "p90": 6400,
+      "p95": 10728,
+      "total": 126851
+    },
+    "datasets": {
+      "function": 20,
+      "swesmith": 20
+    },
+    "rewards": {
+      "0": 19,
+      "1": 21
+    },
+    "rows": 40,
+    "tokens": {
+      "max": 63163,
+      "min": 3143,
+      "p50": 8818,
+      "p90": 44074,
+      "p95": 52572,
+      "total": 746672
+    }
+  },
+  "validation_ratio_requested": 0.1
+}

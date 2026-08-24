@@ -1,0 +1,84 @@
+{
+  "function": {
+    "token_weighted": {
+      "auc": 0.6265509265172311,
+      "brier_clipped": 0.24588348899540988,
+      "explained_variance": 0.03281983402820132,
+      "mse_raw": 0.24588348899540988,
+      "negative_prediction_mean": 0.4490847769370876,
+      "positive_prediction_mean": 0.5111772331470757,
+      "positive_rate": 0.6569200779727096,
+      "prediction_max": 0.984375,
+      "prediction_mean": 0.48987455811207004,
+      "prediction_min": 0.08154296875,
+      "rows_or_tokens": 15903
+    },
+    "trajectory_final_token": {
+      "auc": 0.7333333333333333,
+      "brier_clipped": 0.2232302188873291,
+      "explained_variance": 0.0304440943400065,
+      "mse_raw": 0.2232302188873291,
+      "negative_prediction_mean": 0.505078125,
+      "positive_prediction_mean": 0.5602213541666666,
+      "positive_rate": 0.75,
+      "prediction_max": 0.640625,
+      "prediction_mean": 0.546435546875,
+      "prediction_min": 0.2236328125,
+      "rows_or_tokens": 20
+    },
+    "trajectory_mean": {
+      "auc": 0.7866666666666666,
+      "brier_clipped": 0.19964166858842466,
+      "explained_variance": 0.08580939720304492,
+      "mse_raw": 0.19964166858842466,
+      "negative_prediction_mean": 0.5358655452728271,
+      "positive_prediction_mean": 0.5973506510257721,
+      "positive_rate": 0.75,
+      "prediction_max": 0.6543054580688477,
+      "prediction_mean": 0.5819793745875359,
+      "prediction_min": 0.4045087397098541,
+      "rows_or_tokens": 20
+    }
+  },
+  "swesmith": {
+    "token_weighted": {
+      "auc": 0.69420825064298,
+      "brier_clipped": 0.1235013895908202,
+      "explained_variance": 0.04011637014063896,
+      "mse_raw": 0.12351263209185584,
+      "negative_prediction_mean": 0.2657763163386437,
+      "positive_prediction_mean": 0.3408707836054132,
+      "positive_rate": 0.11591916934059199,
+      "prediction_max": 0.8671875,
+      "prediction_mean": 0.2744812046062819,
+      "prediction_min": -0.126953125,
+      "rows_or_tokens": 110948
+    },
+    "trajectory_final_token": {
+      "auc": 1.0,
+      "brier_clipped": 0.13169312477111816,
+      "explained_variance": 0.3759244850703646,
+      "mse_raw": 0.13169312477111816,
+      "negative_prediction_mean": 0.2616489955357143,
+      "positive_prediction_mean": 0.4736328125,
+      "positive_rate": 0.3,
+      "prediction_max": 0.50390625,
+      "prediction_mean": 0.325244140625,
+      "prediction_min": 0.201171875,
+      "rows_or_tokens": 20
+    },
+    "trajectory_mean": {
+      "auc": 0.9523809523809523,
+      "brier_clipped": 0.17719520241199732,
+      "explained_variance": 0.15631767270617303,
+      "mse_raw": 0.17719520241199732,
+      "negative_prediction_mean": 0.27015864316906246,
+      "positive_prediction_mean": 0.35402581592400867,
+      "positive_rate": 0.3,
+      "prediction_max": 0.39455336332321167,
+      "prediction_mean": 0.29531879499554636,
+      "prediction_min": 0.22094590961933136,
+      "rows_or_tokens": 20
+    }
+  }
+}

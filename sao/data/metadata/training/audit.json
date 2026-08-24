@@ -1,0 +1,16 @@
+{
+  "all_have_action_tokens": true,
+  "excluded_overlength_count": 1,
+  "max_allowed_tokens": 65536,
+  "max_observed_tokens": 65044,
+  "max_source_tokens": 69991,
+  "records": 988,
+  "source_records": 989,
+  "token_mask_length_equal": true,
+  "train_validation_group_overlap": false,
+  "trajectory_source_hashes_present": true,
+  "unique_slots": 989,
+  "unique_trajectory_hashes": 989,
+  "verifier_source_hashes_present": true,
+  "whole_vs_message_tokenization_equal": true
+}

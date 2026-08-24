@@ -1,0 +1,8 @@
+{
+  "attention_trainable_parameters": 0,
+  "frozen_attention_lora_tensors": 288,
+  "total_parameters": 4088530945,
+  "trainable_mlp_lora_tensors": 216,
+  "trainable_parameters": 42469889,
+  "unclassified_lora_tensors": []
+}
